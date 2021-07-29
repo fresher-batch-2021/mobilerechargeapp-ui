@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+    body{
+        background-image:url('./images/index.jpg');
+        background-repeat:no-repeat;
+        background-size:cover;
+        height:95.5vh;
+    }
+    </style>   
+
+</head>
+<body>
+        <header id="header">
+                <!--append-->
+            </header>
+           
+    <h1 style=color:azure>login</h1>
+    <form action="login.html"></form>
+        <label for="email"> Email</label>
+        <input type="email" name="email" id="email" placeholder="enter the email"><br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="enter the password"><br>
+        <button>submit</button>
+        <script src="js/jquery.min.js"></script>
+            <script>
+                $("#header").load("_header.html");
+        
+            </script>
+</body>
+</html>
