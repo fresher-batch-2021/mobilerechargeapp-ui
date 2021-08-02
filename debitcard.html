@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0%;
+        }
+        button {
+            margin-top: 30px;
+            margin-left: 60px;
+        }
+
+        .debit-card {
+            padding-top: 20px;
+            background-color: lightblue;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+        }
+
+        .debit-card2 {
+            background-color: beige;
+            padding-left: 10px;
+            border-radius: 20px 40px;
+            border: 5px  rgb(48, 42, 42);
+
+        }
+    </style>
+</head>
+
+<body>
+<pre>
+    <div class="debit-card">
+        <div class="debit-card2">
+            <h1>Debitcard</h1>
+            <label for="Accountnumber">Accountnumber</label><br>
+            <input type="number" name="accountnumber" id="accountnumber" placeholder="accountnumber" autofocus><br>
+            <label for="accountholdername">AccountholderName</label><br>
+            <input type="name" name="name" id="accontholdername" placeholder="name"><br>
+
+
+            <select>
+                <option value="selected">Bank</option>
+                <option>cityunionbank</option>
+                <option>indianbank</option>
+                <option>statebankofindia</option>
+            </select>
+            <br>
+
+
+            <label class="third" for="branch">Branchname</label><br>
+            <input type="branchname" id="branchname" name="branchname">
+            <br>
+            <button>Proceed</button>
+        </div>
+    </div>
+</body>
+</pre>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        select{
+            margin-top:30px;
+            display: flex;
+        }
+        body{
+            background-image:url("./images/postpaid.jpg");
+            background-repeat:no-repeat;
+            background-attachment: fixed;
+  background-position: center;
+        }
+        button{
+               margin-top: 30px;
+               margin-left: 60px;
+        }
+        .header{
+            border:1px solid;
+            padding:15px;
+            background-color: black;
+            color:white;
+        }
+
+    
+    </style>
+    <header class="header" id="header">
+        </header>
+        <script src="js/jquery.min.js"></script>
+    <script>
+        $("#header").load("_header.html");
+
+    </script>
+</head>
+<body>      
+    <form action="payment.html">
+    <h1>postpaid</h1>
+    
+    <label for="mobilenumber">Mobilenumber</label>
+    <input type="mobilenumber" name="mobilenumber" id="mobilenumber" placeholder="mobilenumber" autofocus><br>
+    <select>
+            <option selected> select sim</option>
+            <option>airtel</option>
+            <option>jio</option>
+            <option>vodafone</option>
+            <option>idea</option>
+    </select>
+            <button>confirm</button>
+    </form>
+</body>
+</html>
