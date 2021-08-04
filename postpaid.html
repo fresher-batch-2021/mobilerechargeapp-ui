@@ -11,6 +11,7 @@
             display: flex;
         }
         body{
+            margin:0px;
             background-image:url("./images/postpaid.jpg");
             background-repeat:no-repeat;
             background-attachment: fixed;
@@ -37,12 +38,11 @@
 
     </script>
 </head>
-<body>      
+<body>   
     <form action="payment.html">
     <h1>postpaid</h1>
-    
     <label for="mobilenumber">Mobilenumber</label>
-    <input type="mobilenumber" name="mobilenumber" id="mobilenumber" placeholder="mobilenumber" autofocus><br>
+    <input type="number" name="mobilenumber" id="mobilenumber" placeholder="mobilenumber" autofocus required><br>
     <select>
             <option selected> select sim</option>
             <option>airtel</option>
@@ -51,6 +51,6 @@
             <option>idea</option>
     </select>
             <button>confirm</button>
-    </form>
+</form>
 </body>
 </html>

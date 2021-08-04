@@ -13,6 +13,9 @@
     background-size:cover;
 
     }
+    button{
+        margin-top: 20px;
+    }
     </style>
     <header id="header">
             <!--append-->
@@ -27,28 +30,39 @@
 <body > 
     <h1>Register</h1>
     <form onsubmit="register()">
-    <label for="name">Name </label>
-        <input type="txt" name="name" id="name" placeholder="Enter the name" autofocus> <br>
-        <label for="email"> Email</label>
-        <input type="email" name="email" id="email" placeholder="enter the email"><br>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" placeholder="enter the password"><br>
+    <label for="name">Name </label><br>
+        <input type="text" name="name" id="name" placeholder="Enter the name" autofocus> <br>
+        <label for="email"> Email</label><br>
+        <input type="email" name="email" id="email" placeholder="enter the email" required><br>
+        <label for="password">Password</label><br>
+        <input type="text" name="password" id="password" placeholder="enter the password"><br>
         <button>submit</button>
         </form>
         <script>
                function register(){
-                   event.preventDefault()
-                   document.querySelector("#name").value;
-                   document.querySelector("#email").value;
-                   document.querySelector("#password").value;
-                   let obj={
+                   event.preventDefault() 
+                  const name= document.querySelector("#name").value;
+                  const email= document.querySelector("#email").value;
+                  const password= document.querySelector("#password").value;
+                  if(password.length<8)
+                  {
+                      alert ("password must be greater than 8");
+                  }
+                  else if(name==null||name==""||name.trim=="")
+                  {
+                      alert("invalid name");
+                  }
+                  else
+                  {
+                      alert("registration successfull");
+                      window.location.href="login.html";
+                  }
+                   const obj={
                        "name":name,
                        "email":email,
                        "password":password,
                    };
-                   alert("registered successful")
                    console.log(obj);
-
                }
         
             </script>

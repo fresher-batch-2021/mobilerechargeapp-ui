@@ -6,33 +6,71 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 <style>
-    body{
-        margin:0px;
-        background-image:url('./images/index.jpg');
-        background-repeat:no-repeat;
-        background-size:cover;
-        height:100vh;
+    .login{
+        background-color: aquamarine;
+        margin-top:200px;
+        margin-left:400px; 
+        border:1px solid red;
+padding:40px;
+width:30rem;
     }
-    </style>   
-
-</head>
-<body>
-        <header id="header">
-                <!--append-->
-            </header>
-           
-    <h1 style=color:azure>login</h1>
-    <form action="prepaid.html">
-        <label for="email"> Email</label>
-        <input type="email" name="email" id="email" placeholder="enter the email"><br>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" placeholder="enter the password"><br>
-        <button>submit</button>
+    body{
+        margin:0%;
+    }
+    h1{
+        text-align: center;
+    }
+    #loginn:hover{
+        background-color: brown;
+    }
+    #loginn{
+        margin-left:20px;
+        margin-top:20px;
+    }
+    </style>
+     <header id="header">
+            <!--append-->
+        </header>
         <script src="js/jquery.min.js"></script>
             <script>
                 $("#header").load("_header.html");
         
             </script>
+
+</head>
+
+<body>
+
+   
+    <div class="login">
+    <h1>Login</h1>
+    <form onsubmit="login()">
+        <label for="email"> Email</label><br>
+        <input type="email" name="email" id="email" placeholder="enter the email" required><br>
+        <label for="password">Password</label><br>
+        <input type="text" name="password" id="password" placeholder="enter the password"><br>
+        <button>submit</button>
             </form>
+            </div>
+            <script>
+            function login(){
+                event.preventDefault();
+                const name=document.querySelector("#email").value;
+                const password=document.querySelector("#password").value;
+                if(password.length<8){
+                alert("password is invalid");
+                }
+                else{
+                alert("login successful");
+                window.location.href="recharge.html";
+            }
+            const obj = {
+                "email":email,
+                "password":password
+            }
+            console.log(obj);
+            }
+    </script>
 </body>
+
 </html>
