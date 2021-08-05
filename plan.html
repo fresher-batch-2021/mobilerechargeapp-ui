@@ -76,32 +76,19 @@
             <div class="row">
 
                 <div class="col-1">
-                    <table>
+                    <table >
+                        <thead>
+
                         <tr>
+                            <th>id</th>
                             <th>Price</th>
                             <th>Validity</th>
                             <th>Descriptionnnn!!!</th>
                         </tr>
-                        <tr>
-                            <td>149</td>
-                            <td>28days</td>
-                            <td>Unlimited calls and Messages + 1GB data/day</td>
-                        </tr>
-                        <tr>
-                            <td>249</td>
-                            <td>28days</td>
-                            <td>Unlimited calls and Messages + 2GB data/day + hotstar membership</td>
-                        </tr>
-                        <tr>
-                            <td>399</td>
-                            <td>84days</td>
-                            <td>Unlimited calls and Messages + 1.5GB data/day </td>
-                        </tr>
-                        <tr>
-                            <td>555</td>
-                            <td>84days</td>
-                            <td>Unlimited calls and Messages + 2GB data/day + amazon, Hotstar membership</td>
-                        </tr>
+                    </thead>
+                        <tbody id="plans">
+
+                        </tbody>
                     </table>
                 </div>
                 <div class  =  "col-2">
@@ -111,7 +98,23 @@
                 </div>
             </div>
         </div>
-
+<script>
+    function plan()
+    {
+        let a=[
+            {id:1,price:149,validity:"28days",description:"Unlimited calls and Messages + 1GB data/day"},
+            {id:2,price:249,validity:"28days",description:"	Unlimited calls and Messages + 2GB data/day + hotstar membership"},
+            {id:3,price:399,validity:"84days",description:"Unlimited calls and Messages + 1.5GB data/day"},
+            {id:4,price:555,validity:"84days",description:"Unlimited calls and Messages + 2GB data/day + amazon, Hotstar membership"}
+        ]
+        let b=""
+        for(let arrayobject of a){
+            b=b+`<tr><td>${arrayobject.id}</td><td>${arrayobject.price}</td><td>${arrayobject.validity}</td><td>${arrayobject.description}</td></tr>`
+        }
+        document.querySelector("#plans").innerHTML=b;
+    }
+    plan();
+</script>
 </body>
 
 </html>

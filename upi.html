@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upi</title>
+    <style>
+        .foxtrot{
+            margin:250px;
+            border:3px solid black;
+            padding:30px;
+            background-color: darkgray;
+            max-width:60%;
+            height:80%;
+            border-radius:50px;
+        }
+        .edge{
+            background-color:black ;
+            font-size:20px;
+            text-align: center;
+            color: blanchedalmond;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="foxtrot">
+        <form onsubmit="upi()">
+        <h1>upi</h1>
+    <div class="demo">
+        <label for="mobilenumber">Mobilenumber</label><br>
+        <input type="number" id="mobilenumber" name="mobilenumber" placeholder="Mobilenumber" autofocus><br>
+    </div>
+    <div class="pin">
+        <label for="upipinnumber">UPI</label><br>
+        <input type="number" id="upipinnumber" name="pin" placeholder="Pin"><br>
+    </div>
+    <button class="edge">confirm</button> 
+    </form> 
+    </div>  
+    <script>
+        function upi(){
+            event.preventDefault();
+        const mobileNumber=document.querySelector("#mobilenumber").value;
+        const pinNumber=document.querySelector("#upipinnumber").value;
+        if(mobileNumber==""||mobileNumber==null||mobileNumber<10)
+        {
+            alert ("invalid mobilenumber");
+        }
+        else if(pinNumber==""||pinNumber==null||pinNumber<4){
+            alert ("invalid pin");
+        }
+        else
+        {
+            alert ("payment successful");
+            window.location.href="index.html";
+        }
+let obj={
+    "mobileNumber":mobileNumber,
+    "pinNumber":pinNumber
+};
+console.log(obj);
+        }
+    </script>
+</body>
+</html>

@@ -7,58 +7,106 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        body{
-            margin:0%;
-        }
-        button {
-            margin-top: 30px;
-            margin-left: 60px;
+        body {
+            background-color: cadetblue;
+            margin: auto;
+            width: 100%;
+            align-items: center;
         }
 
-        .debit-card {
-            padding-top: 20px;
-            background-color: lightblue;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-bottom: 20px;
+        button {
+            text-align: center;
+            margin-top: 20px;
+            margin-left: 20px;
+            background-color: cornflowerblue;
+            color: cornsilk;
+        }
+
+        .box-style {
+            width : 200px;
+            height : 35px;
+            border-radius: 5px 5px;
         }
 
         .debit-card2 {
             background-color: beige;
             padding-left: 10px;
             border-radius: 20px 40px;
-            border: 5px  rgb(48, 42, 42);
-
+            border: 5px rgb(48, 42, 42);
+            width: 30%;
+            margin-top: 100px;
+            margin-left: 450px;
+        }
+        .select-style{
+            width:210px;
+            height:38px;
+            border-radius: 5px 5px;
         }
     </style>
 </head>
 
 <body>
-<pre>
+
     <div class="debit-card">
         <div class="debit-card2">
-            <h1>Debitcard</h1>
-            <label for="Accountnumber">Accountnumber</label><br>
-            <input type="number" name="accountnumber" id="accountnumber" placeholder="accountnumber" autofocus><br>
-            <label for="accountholdername">AccountholderName</label><br>
-            <input type="name" name="name" id="accontholdername" placeholder="accounholdername"><br>
+            <form onsubmit="debitcard()">
+                <center>
+                    <h1>Debitcard</h1><br/>
+                    <label for="Accountnumber">Accountnumber</label><br>
+                    <input class="box-style" type="number" name="accountnumber" id="accountnumber" placeholder="accountnumber"
+                        autofocus><br><br/>
+                    <label for="accountholdername">Accountholdername</label><br>
+                    <input class="box-style" type="text" name="name" id="accountholdername" placeholder="accountholdername"><br>
+                    <br/>
+                    <select class="select-style">
+                        <option value="selected">Bank</option>
+                        <option>cityunionbank</option>
+                        <option>indianbank</option>
+                        <option>statebankofindia</option>
+                    </select>
+                    <br><br/>
 
 
-            <select>
-                <option value="selected">Bank</option>
-                <option>cityunionbank</option>
-                <option>indianbank</option>
-                <option>statebankofindia</option>
-            </select>
-            <br>
+                    <label class="third" for="branchname">Branchname</label><br>
+                    <input class="box-style" type="text" id="branchname" name="branchname">
+                    <br>
+                    <button>Proceed</button>
+                    <br/>
+                    <br/>
+                    <br/>
+                </center>
+            </form>
 
-
-            <label class="third" for="branchname">Branchname</label><br>
-            <input type="branchname" id="branchname" name="branchname">
-            <br>
-            <button>Proceed</button>
         </div>
     </div>
+    <script>
+        function debitcard() {
+            event.preventDefault();
+            const number = document.querySelector("#accountnumber").value;
+            const name = document.querySelector("#accountholdername").value;
+            const bname = document.querySelector("#branchname").value;
+            if (number == null || number == "" || number < 16) {
+                alert("invalid accountnumber");
+            }
+            else if (name == null || name == "") {
+                alert("invalid name");
+            }
+            else if (bname == null || bname == "" || bname.trim() == "") {
+                alert("invalid branchname");
+            }
+            else {
+                alert("payment successful");
+                window.location.href = "index.html";
+            }
+            let obj = {
+                "accountHolderNumber": number,
+                "accountHolderName": name,
+                "branchName": name
+            };
+            console.log(obj);
+        }
+
+    </script>
 </body>
-</pre>
+
 </html>
