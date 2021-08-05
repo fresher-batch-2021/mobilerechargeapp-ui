@@ -7,22 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>prepaid</title>
     <style>
-        .prepaid {
-            
-            margin-top: 40px;
-            margin-bottom: 40px;
-            margin-left: 150px;
-            margin-right: 150px;
-            padding: 80px;
-            background-color: rgb(90, 236, 188);
-            margin: 0%;
+        body{
+            background-image:url("./images/prepaid1.jpg") ;
+            background-size:cover;
+            background-repeat: no-repeat;
+            padding-bottom: 50px;
         }
-
         .prepaid1 {
-            border: 5px solid black;
-            border-radius: 40px 30px;
+            margin-top: 100px;
+            margin-left: 200px;
+            margin-right: 200px;
+            padding-bottom: 60px;
+            color : whitesmoke;
             padding: 30px;
-            background-color: rgb(248, 244, 244);
+            background-color: rgb(255,255,255);
+            opacity: 0.7;
+            color: black;
         }
 
         button {
@@ -39,6 +39,17 @@
         body {
             margin: 0%;
         }
+        .box-style
+            {
+            width : 200px;
+            height : 25px;
+            border-radius: 5px 5px;
+        }
+        .select-style{
+            width:110px;
+            height:38px;
+            border-radius: 5px 5px;
+        }
     </style>
     <header class="header" id="header">
     </header>
@@ -49,22 +60,24 @@
 </head>
 
 <body>
-    <div class="prepaid">
+    
         <div class="prepaid1">
             <form action="payment.html">
-                <h1>prepaid</h1>
+                <h1>PREPAID</h1><br>
                 <label for="mobilenumber">Mobilenumber</label>
                 <br>
-                <input type="number" name="mobilenumber" id="mobilenumber" placefolder="mobilenumber" autofocus required>
+                <input class="box-style" type="number" name="mobilenumber" id="mobilenumber" placefolder="mobilenumber" autofocus required>
                 <br>
-                <select>
+                <br>
+                <br>
+                <select class="select-style">
                     <option selected> select sim</option>
                     <option>airtel</option>
                     <option>jio</option>
                     <option>vodafone</option>
                     <option>idea</option>
                 </select>
-                <select>
+                <select class="select-style">
                     <option selected> select plan</option>
                     <option>Rs.149</option>
                     <option>RS.249</option>
@@ -75,7 +88,7 @@
                 <button>confirm</button>
             </form>
         </div>
-    </div>
+    
 </body>
 
 </html>

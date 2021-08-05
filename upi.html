@@ -6,34 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>upi</title>
     <style>
-        .foxtrot{
-            margin:250px;
-            border:3px solid black;
-            padding:30px;
-            background-color: darkgray;
-            max-width:60%;
-            height:80%;
-            border-radius:50px;
+        body{
+            background-image:url("./images/upi1.jpg");
+            margin:0px;
+            background-size:cover;
+            background-repeat: no-repeat;
+            width: 100%;
         }
-        .edge{
-            background-color:black ;
-            font-size:20px;
-            text-align: center;
-            color: blanchedalmond;
-        }
-    
+    .foxtrot{
+        background-color: rgb(243, 154, 203);
+            padding-left: 10px;
+            border-radius: 4px 4px;
+            border: 20px rgb(48, 42, 42);
+            height: 80%;
+            width: 50%;
+            margin-top: 200px;
+            margin-left: 450px;
+            opacity:0.8;
+            padding-bottom:40px;
+    }
+    .demo{
+        color:blue ;
+    }
+    .pin{
+        color:blue;
+    }
+    .edge{
+        background-color: pink;
+        color: royalblue;
+        margin-top:20px;
+        margin-left:40px;
+    }
     </style>
 </head>
 <body>
     <div class="foxtrot">
         <form onsubmit="upi()">
-        <h1>upi</h1>
+        <h1>UPI</h1>
     <div class="demo">
         <label for="mobilenumber">Mobilenumber</label><br>
         <input type="number" id="mobilenumber" name="mobilenumber" placeholder="Mobilenumber" autofocus><br>
     </div>
     <div class="pin">
-        <label for="upipinnumber">UPI</label><br>
+        <label for="upipinnumber">Pin</label><br>
         <input type="number" id="upipinnumber" name="pin" placeholder="Pin"><br>
     </div>
     <button class="edge">confirm</button> 

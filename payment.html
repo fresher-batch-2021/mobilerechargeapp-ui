@@ -19,13 +19,37 @@
     </style>
 </head>
 <body>
-    <form action="debitcard.html">
+    <form  onsubmit="pay()">
     <h1>Payment options</h1>
+    
+    <input type="radio"  name="paymentType"  id="paymentType" value="DEBIT" required>
     <label for="debit">Debitcard</label>
-    <input type="radio">
-    <label for="upi">UPI</label>
-    <input type="radio"><br>
+
+    
+    <input type="radio" name="paymentType" id="paymentType" value="UPI" required>
+    <label for="upi">UPI</label><br>
 <button>Proceed</button>
     </form>
+
+
+    <script>
+        function pay(){
+            event.preventDefault();
+            let paymentType ;
+            let paymentTypeOptions = document.querySelectorAll("#paymentType");
+            paymentTypeOptions.forEach(obj=> {
+                if(obj.checked) {  
+                    paymentType = obj.value;
+                }
+            });
+            alert(paymentType);
+            if(paymentType=="DEBIT"){
+                window.location.href= "debitcard.html";
+            }
+            else{
+                window.location.href="upi.html";
+            }
+        }
+    </script>
 </body>
 </html>
