@@ -28,12 +28,6 @@
             margin-left: 60px;
         }
 
-        .header {
-            border: 1px solid;
-            padding: 15px;
-            background-color: rgb(26, 11, 11);
-        }
-
         body {
             margin: 0%;
         }
@@ -49,16 +43,10 @@
             border-radius: 5px 5px;
         }
     </style>
-    <header class="header" id="header">
-    </header>
-    <script src="js/jquery.min.js"></script>
-    <script>
-        $("#header").load("_header.html");
-    </script>
+    
 </head>
 
 <body>
-    
         <div class="prepaid1">
             <form action="payment.html">
                 <h1>PREPAID</h1><br>
@@ -68,12 +56,9 @@
                 <br>
                 <br>
                 <br>
-                <select class="select-style">
-                    <option selected> select sim</option>
-                    <option>airtel</option>
-                    <option>jio</option>
-                    <option>vodafone</option>
-                    <option>idea</option>
+                <select class="select-style" id ="sim1">
+                    
+                   
                 </select>
                 <select class="select-style">
                     <option selected> select plan</option>
@@ -86,6 +71,26 @@
                 <button>confirm</button>
             </form>
         </div>
+        <script>
+            function sim()
+            {
+            let a=[ {simName:"airtel"},
+                {simName:"jio"},
+                {simName:"vodafone"},
+                {simName:"idea"}]
+            let content="";
+            content = content + "<option disabled> --- select  ---</option>";
+            for(let simobj of a){
+                console.log(simobj);
+                content=content+`<option value='${simobj.simName}'>${simobj.simName}</option>`;
+            }
+            console.log(content);
+
+            document.querySelector("#sim1").innerHTML=content;
+        }
+        sim();
+
+        </script>
     
 </body>
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>postpaid</title>
     <style>
         select{
             margin-top:30px;
@@ -16,32 +16,18 @@
             background-repeat:no-repeat;
             background-attachment: fixed;
   background-position: center;
+  background-color: bisque;
         }
         button{
                margin-top: 30px;
                margin-left: 60px;
         }
-        .header{
-            border:1px solid;
-            padding:15px;
-            background-color: black;
-            color:white;
-        }
-
-    
-    </style>
-    <header class="header" id="header">
-        </header>
-        <script src="js/jquery.min.js"></script>
-    <script>
-        $("#header").load("_header.html");
-
-    </script>
+        </style>
 </head>
 <body>   
     <form action="payment.html">
     <h1>postpaid</h1>
-    <label for="mobilenumber">Mobilenumber</label>
+    <label for="mobilenumber">Mobilenumber</label><br>
     <input type="number" name="mobilenumber" id="mobilenumber" placeholder="mobilenumber" autofocus required><br>
     <select>
             <option selected> select sim</option>
