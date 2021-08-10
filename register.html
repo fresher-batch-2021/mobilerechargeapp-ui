@@ -5,30 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>register</title>
-    <style>
-    body{
-        margin:0px;
-    background-image:url('./images/reg.jpg') ;
-    background-repeat:no-repeat;
-    background-size:cover;
-
-    }
-    button{
-        margin-top: 20px;
-    }
-    </style>
+<link rel="stylesheet" href="register.css">
     
         
 </head>
-<body > 
+<body>
     <header id="header">
         <!--append-->
     </header>
-        <script src="js/jquery.min.js"></script>
-            <script>
-                $("#header").load("_header.html");
-        
-            </script>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $("#header").load("_header.html");
+
+    </script>
     <h1>Register</h1>
     <form onsubmit="register()">
     <label for="name">Name </label><br>
@@ -37,36 +26,13 @@
         <input type="email" name="email" id="email" placeholder="enter the email" required><br>
         <label for="password">Password</label><br>
         <input type="text" name="password" id="password" placeholder="enter the password"><br>
-        <button>submit</button>
+        <button class="example">submit</button>
         </form>
-        <script>
-               function register(){
-                   event.preventDefault() 
-                  const name= document.querySelector("#name").value;
-                  const email= document.querySelector("#email").value;
-                  const password= document.querySelector("#password").value;
-                  if(password.length<8)
-                  {
-                      alert ("password must be greater than 8");
-                  }
-                  else if(name==null||name==""||name.trim()=="")
-                  {
-                      alert("invalid name");
-                  }
-                  else
-                  {
-                      alert("registration successfull");
-                      window.location.href="login.html";
-                  }
-                   const obj={
-                       "name":name,
-                       "email":email,
-                       "password":password,
-                   };
-                   console.log(obj);
-               }
-        
-            </script>
+       
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+        <script src="js/javascript/register.js"></script>
 </body>
 </html>

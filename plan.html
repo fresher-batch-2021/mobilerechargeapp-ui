@@ -65,11 +65,6 @@
     <header id="header">
         <!--append-->
     </header>
-        <script src="js/jquery.min.js"></script>
-            <script>
-                $("#header").load("_header.html");
-        
-            </script>
     <div class="div1">
         <div class="div2">
             <div class="row">
@@ -93,25 +88,27 @@
                 </div>
                 <div class  =  "col-2">
                     <img src="./images/airtel.png" alt="airtel" height="60px" width="80px">
-                    <img style="padding-left : 30px;" src="./images/jio.png" alt="airtel" height="60px" width="80px">
-                    <img style="padding-left:50px;" src="./images/vodafoneidea.png" alt="vi" height="60px" width="80px">
+                    <img style="padding-left : 30px;" src="./images/jio.png" alt="jio" height="60px" width="80px">
+                    <img style="padding-left:50px;" src="./images/vodafoneidea.png" alt=vi" height="60px" width="80px">
                 </div>
             </div>
         </div>
-<script>
+        <script src="js/jquery.min.js"></script>
+            <script>
+                $("#header").load("_header.html");
     function plan()
     {
-        let a=[
+        let planList=[
             {id:1,price:149,validity:"28days",description:"Unlimited calls and Messages + 1GB data/day"},
             {id:2,price:249,validity:"28days",description:"	Unlimited calls and Messages + 2GB data/day + hotstar membership"},
             {id:3,price:399,validity:"84days",description:"Unlimited calls and Messages + 1.5GB data/day"},
             {id:4,price:555,validity:"84days",description:"Unlimited calls and Messages + 2GB data/day + amazon, Hotstar membership"}
         ]
-        let b=""
-        for(let arrayobject of a){
-            b=b+`<tr><td>${arrayobject.id}</td><td>${arrayobject.price}</td><td>${arrayobject.validity}</td><td>${arrayobject.description}</td></tr>`
+        let content="";
+        for(let planObj of planList){
+            content=content+`<tr><td>${planObj.id}</td><td>${planObj.price}</td><td>${planObj.validity}</td><td>${planObj.description}</td></tr>`
         }
-        document.querySelector("#plans").innerHTML=b;
+        document.querySelector("#plans").innerHTML=content;
     }
     plan();
 </script>

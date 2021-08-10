@@ -29,7 +29,7 @@
     <h1>postpaid</h1>
     <label for="mobilenumber">Mobilenumber</label><br>
     <input type="number" name="mobilenumber" id="mobilenumber" placeholder="mobilenumber" autofocus required><br>
-    <select>
+    <select id="provider" required>
             <option selected> select sim</option>
             <option>airtel</option>
             <option>jio</option>
@@ -38,5 +38,23 @@
     </select>
             <button>confirm</button>
 </form>
+<script>
+    function sim(){
+        let simOptions=[{simName:"airtel"},
+        {simName:"jio"},
+        {simName:"vodafone"},
+        {simName:"idea"}
+
+        ]
+        let content="";
+        content=content+"<option disable>select</option>";
+        for(let simobj of simoptions){
+            content=content+`<option value="${simobj.simName}">${simobj.simName}</option>`;
+        }
+        console.log(content);
+        document.querySelector("#provider").innerHTML = content;
+    }
+    sim();
+</script>
 </body>
 </html>

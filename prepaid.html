@@ -12,13 +12,14 @@
             background-size:cover;
             background-repeat: no-repeat;
             padding-bottom: 50px;
+            margin: 0%;
         }
-        .prepaid1 {
+        .prepaid {
             margin-top: 100px;
             margin-left: 200px;
             margin-right: 200px;
             padding: 30px 0 60px;
-            background-color: rgb(255,255,255);
+            background-color: rgb(240, 246, 250);
             opacity: 0.7;
             color: black;
         }
@@ -28,9 +29,6 @@
             margin-left: 60px;
         }
 
-        body {
-            margin: 0%;
-        }
         .box-style
             {
             width : 200px;
@@ -47,7 +45,7 @@
 </head>
 
 <body>
-        <div class="prepaid1">
+        <div class="prepaid">
             <form action="payment.html">
                 <h1>PREPAID</h1><br>
                 <label for="mobilenumber">Mobilenumber</label>
@@ -56,40 +54,52 @@
                 <br>
                 <br>
                 <br>
-                <select class="select-style" id ="sim1">
+                <select class="select-style" id ="sims">
                     
                    
                 </select>
-                <select class="select-style">
-                    <option selected> select plan</option>
-                    <option>Rs.149</option>
-                    <option>RS.249</option>
-                    <option>RS.399</option>
-                    <option>Rs.555</option>
+                <select class="select-style" id="plans">
+    
                 </select>
                 <br>
-                <button>confirm</button>
+                <button class="prepaid-button">confirm</button>
             </form>
         </div>
         <script>
             function sim()
             {
-            let a=[ {simName:"airtel"},
+            let simOptions=[ {simName:"airtel"},
                 {simName:"jio"},
                 {simName:"vodafone"},
                 {simName:"idea"}]
             let content="";
             content = content + "<option disabled> --- select  ---</option>";
-            for(let simobj of a){
+            for(let simobj of simOptions){
                 console.log(simobj);
                 content=content+`<option value='${simobj.simName}'>${simobj.simName}</option>`;
             }
             console.log(content);
 
-            document.querySelector("#sim1").innerHTML=content;
+            document.querySelector("#sims").innerHTML=content;
         }
         sim();
+            function plan(){
+                let planOptions=[{price:"Rs.149"},
+                {price:"Rs.249"},
+                {price:"Rs.399"},
+                {price:"Rs.555"}
 
+                ]
+                let content="";
+                content=content+"<option disabled> select</option>";
+                for(let planObj of planOptions){
+                    content=content+`<option value='${planObj.price}'>${planObj.price}</option>`;
+                }
+                console.log(content);
+                document.querySelector("#plans").innerHTML=content;
+
+            }
+            plan();
         </script>
     
 </body>
