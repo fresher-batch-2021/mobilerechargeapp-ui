@@ -3,7 +3,7 @@ function login() {
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
     if (password.length < 8) {
-        alert("password is invalid");
+        alert("password must be greater than 8 digits");
         return false;
     }
     else {

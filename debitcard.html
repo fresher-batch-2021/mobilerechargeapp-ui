@@ -15,9 +15,6 @@
         }
 
         button {
-            text-align: center;
-            margin-top: 20px;
-            margin-left: 20px;
             background-color: cornflowerblue;
             color: cornsilk;
         }
@@ -35,12 +32,33 @@
             border: 5px rgb(48, 42, 42);
             width: 30%;
             margin-top: 100px;
-            margin-left: 450px;
+            margin-left: 450px; 
+            display: block;
+            
         }
         .select-style{
             width:210px;
             height:38px;
             border-radius: 5px 5px;
+        }
+        h1{
+            text-align: center;
+        }
+        .formcontainer input, select
+        {
+            display: block;
+            margin: 0 auto;
+        }
+        .formcontainer label
+        {
+            
+            margin-left:100px;
+        }
+        .formcontainer button
+        {
+          display: block;
+          margin: auto;
+          padding: 10px;
         }
     </style>
 </head>
@@ -49,16 +67,15 @@
 
     <div class="debit-card">
         <div class="debit-card2">
-            <form onsubmit="debitcard()">
-                <center>
+            <form onsubmit="debitcard()" class="formcontainer">
                     <h1>Debitcard</h1><br/>
-                    <label for="Accountnumber">Accountnumber</label><br>
+                    <label for="Accountnumber">Accountnumber</label>
                     <input class="box-style" type="number" name="accountnumber" id="accountnumber" placeholder="accountnumber"
                         autofocus><br><br/>
-                    <label for="accountholdername">Accountholdername</label><br>
+                    <label for="accountholdername">Accountholdername</label>
                     <input class="box-style" type="text" name="name" id="accountholdername" placeholder="accountholdername"><br>
                     <br/>
-                    <select class="select-style">
+                    <select class="select-style" required>
                         <option value="selected">Bank</option>
                         <option>cityunionbank</option>
                         <option>indianbank</option>
@@ -67,15 +84,13 @@
                     <br><br/>
 
 
-                    <label class="third" for="branchname">Branchname</label><br>
-                    <input class="box-style" type="text" id="branchname" name="branchname">
+                    <label class="third" for="branchname">Branchname</label>
+                    <input class="box-style" type="text" id="branchname" nam    e="branchname">
                     <br>
                     <button>Proceed</button>
                     <br/>
                     <br/>
                     <br/>
-                </pre>
-                </center>
             </form>
 
         </div>
@@ -88,7 +103,7 @@
             const branchName = document.querySelector("#branchname").value;
 
 
-            if (accountNumber == null ||accountNumber == "" ||accountNumber < 16) {
+            if (accountNumber == null ||accountNumber == "" ||accountNumber.length < 16) {
                 alert("invalid accountnumber");
             }
             else if (accountHolderName == null ||accountHolderName == "") {

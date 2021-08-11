@@ -10,7 +10,7 @@ function register(){
    }
    else if(name==null||name==""||name.trim()=="")
    {
-       alert("invalid name");
+       alert("name cannot be empty");
        return false;
    }
    else

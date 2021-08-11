@@ -2,15 +2,13 @@
 .navbar{
     padding:15px 5px;
     background-color:black;
+    margin-right: 0%;
 }
 .nav-item{
     text-decoration: none;
     color:white;
     font-size: 30px;
-    margin-left:20px;
-}
-.first{
-    margin: 0;
-    margin-left: 0px;
+    padding-left:20px;
+
 }
 

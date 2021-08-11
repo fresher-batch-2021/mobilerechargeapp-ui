@@ -18,6 +18,11 @@
   background-position: center;
   background-color: bisque;
         }
+        .select-style{
+            width:100px;
+            height:30px;
+            border-radius: 5px 5px;
+        }
         button{
                margin-top: 30px;
                margin-left: 60px;
@@ -29,12 +34,8 @@
     <h1>postpaid</h1>
     <label for="mobilenumber">Mobilenumber</label><br>
     <input type="number" name="mobilenumber" id="mobilenumber" placeholder="mobilenumber" autofocus required><br>
-    <select id="provider" required>
-            <option selected> select sim</option>
-            <option>airtel</option>
-            <option>jio</option>
-            <option>vodafone</option>
-            <option>idea</option>
+    <select class="select-style" id="provider">
+            
     </select>
             <button>confirm</button>
 </form>
@@ -45,11 +46,11 @@
         {simName:"vodafone"},
         {simName:"idea"}
 
-        ]
+        ];
         let content="";
         content=content+"<option disable>select</option>";
-        for(let simobj of simoptions){
-            content=content+`<option value="${simobj.simName}">${simobj.simName}</option>`;
+        for(let simObj of simOptions){
+            content=content+`<option value='${simObj.simName}'>${simObj.simName}</option>`;
         }
         console.log(content);
         document.querySelector("#provider").innerHTML = content;
