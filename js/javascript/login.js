@@ -18,7 +18,7 @@ function login() {
         const url = "https://product-mock-api.herokuapp.com/rechargeapp/api/v1/auth/login";
         axios.post(url,obj).then(res => {
             alert("login successful");
-             window.location.href="recharge.html";
+             window.location.href="plan.html";
         }).catch(err => {
             alert("login failed");
         })

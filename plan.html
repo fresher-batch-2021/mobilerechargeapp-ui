@@ -57,6 +57,12 @@
         body{
             margin-left:0px;
         }
+        .demo{
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+            background-color: brown;
+        }
     </style>
 
 </head>
@@ -85,6 +91,7 @@
 
                         </tbody>
                     </table>
+                    <input class="demo"type="submit" value="Recharge" onclick="foxtrot()">
                 </div>
                 <div class  =  "col-2">
                     <img src="./images/airtel.png" alt="airtel" height="60px" width="80px">
@@ -111,6 +118,9 @@
         document.querySelector("#plans").innerHTML=content;
     }
     plan();
+    function foxtrot(){
+        window.location.href="recharge.html";
+    }
 </script>
 </body>
 
