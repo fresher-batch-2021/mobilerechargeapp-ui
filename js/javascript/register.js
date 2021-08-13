@@ -5,7 +5,7 @@ function register(){
    const password= document.querySelector("#password").value;
    if(password.length<8)
    {
-       alert ("password must be greater than 8");
+       alert ("password must be atleast 8 digits");
        return false;
    }
    else if(name==null||name==""||name.trim()=="")

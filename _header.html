@@ -3,8 +3,18 @@
     <nav class="navbar">
         <a class="nav-item" href="register.html">Register</a>
         <a class="nav-item" href="login.html"> Login </a>
-        <a class="nav-item" href="plan.html">plans</a>
-        <a class="nav-item" href="recharge.html">recharge</a>
+        <a class="nav-item" href="plan.html">Plans</a>
+        <a class="nav-item" href="recharge.html">Recharge</a>
+        <a class="username"id = "userName"></a>
+        <a class="nav-item log-out" href="logout.html">LogOut</a>
 
     </nav>
+    
 </header>
+<script>
+    let userStr = localStorage.getItem("LOGGED_IN_USER");
+            let user = userStr != null ? JSON.parse(userStr):null;
+            console.log("Name : ", user.name);
+            let content =`<a class="nav-item" href="">${user.name}</a>`;
+        document.querySelector("#userName").innerHTML = content;
+</script>

@@ -7,18 +7,16 @@ function login() {
         return false;
     }
     else {
-       
-        
-
-        const obj = {
+            const obj = {
             "email": email,
             "password": password
         }
         console.log(obj);
         const url = "https://product-mock-api.herokuapp.com/rechargeapp/api/v1/auth/login";
-        axios.post(url,obj).then(res => {
+        axios.post(url, obj).then(res => {
+            localStorage.setItem("LOGGED_IN_USER", JSON.stringify(res.data));
             alert("login successful");
-             window.location.href="plan.html";
+            window.location.href = "plan.html";
         }).catch(err => {
             alert("login failed");
         })

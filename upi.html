@@ -49,7 +49,7 @@
     </div>
     <div class="pin">
         <label for="upipinnumber">Pin</label><br>
-        <input type="number" id="upipinnumber" name="pin" placeholder="Pin"><br>
+        <input type="password" id="upipinnumber" name="pin" placeholder="Pin"><br>
     </div>
     <button class="edge">confirm</button> 
     </form> 
@@ -59,11 +59,11 @@
             event.preventDefault();
         const mobileNumber=document.querySelector("#mobilenumber").value;
         const pinNumber=document.querySelector("#upipinnumber").value;
-        if(mobileNumber==""||mobileNumber==null||mobileNumber<10)
+        if(mobileNumber==""||mobileNumber==null||mobileNumber.length<10)
         {
             alert ("invalid mobilenumber");
         }
-        else if(pinNumber==""||pinNumber==null||pinNumber<4){
+        else if(pinNumber==""||pinNumber==null||pinNumber.length<4){
             alert ("invalid pin");
         }
         else

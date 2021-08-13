@@ -2,7 +2,7 @@
 .navbar{
     padding:15px 5px;
     background-color:black;
-    margin-right: 0%;
+    margin-right: 0px;
 }
 .nav-item{
     text-decoration: none;
@@ -10,5 +10,11 @@
     font-size: 30px;
     padding-left:20px;
 
+}
+.log-out{
+    float: right;
+}
+.username{
+    padding-left: 300px;
 }
 
