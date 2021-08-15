@@ -5,26 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        button{
-        margin-top: 30px;
-        margin-left:60px;
-        }
-        body{
-            background-image:url("./images/payment.jpg");
-            background-repeat:no-repeat;
-            background-attachment: fixed;
-  background-position: center;
-  background-color:gainsboro;
-        }
-    </style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="payment">
     <form  onsubmit="pay()">
     <h1>Payment options</h1>
     
     <input type="radio"  name="paymentType"  id="paymentType" value="DEBIT" required>
-    <label for="debit">Debitcard</label>
+    <label for="debit">Debitcard</label><br>
 
     
     <input type="radio" name="paymentType" id="paymentType" value="UPI" required>
@@ -33,8 +22,9 @@
     <label for="wallet">wallet</label><br>
     
 
-<button>Proceed</button>
+<button class="payment-button">Proceed</button>
     </form>
+    </div>
 
 
     <script>
@@ -57,6 +47,18 @@
             else{
                 window.location.href="upi.html";
             }
+        }
+        function wallet(value){
+
+            const amount=value;
+            console.log(amount);
+            let obj={"amount":amount
+
+            }
+            const url=""
+            axios.patch(url,obj).then(res=>{
+                console.log(res.data);
+            })
         }
     </script>
 </body>
