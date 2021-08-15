@@ -5,39 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>postpaid</title>
-    <style>
-        select{
-            margin-top:30px;
-            display: flex;
-        }
-        body{
-            margin:0px;
-            background-image:url("./images/postpaid.jpg");
-            background-repeat:no-repeat;
-            background-attachment: fixed;
-  background-position: center;
-  background-color: bisque;
-        }
-        .select-style{
-            width:100px;
-            height:30px;
-            border-radius: 5px 5px;
-        }
-        button{
-               margin-top: 30px;
-               margin-left: 60px;
-        }
-        </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>   
+    <div class="postpaid">
     <form action="payment.html">
-    <h1>postpaid</h1>
+    <h1 class="postpaid-head">postpaid</h1>
     <label for="mobilenumber">Mobilenumber</label><br>
     <input type="number" name="mobilenumber" id="mobilenumber" placeholder="mobilenumber" autofocus required><br>
     <select class="select-style" id="provider">
             
     </select>
-            <button>confirm</button>
+            <button class="postpaid-button">confirm</button>
+    </div>
 </form>
 <script>
     function sim(){

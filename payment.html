@@ -29,6 +29,10 @@
     
     <input type="radio" name="paymentType" id="paymentType" value="UPI" required>
     <label for="upi">UPI</label><br>
+    <input type="radio" name="paymentType" id="paymentType" value="wallet" required>
+    <label for="wallet">wallet</label><br>
+    
+
 <button>Proceed</button>
     </form>
 
@@ -46,6 +50,9 @@
             alert(paymentType);
             if(paymentType=="DEBIT"){
                 window.location.href= "debitcard.html";
+            }
+            else if(paymentType=="wallet"){
+                
             }
             else{
                 window.location.href="upi.html";
