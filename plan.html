@@ -13,6 +13,9 @@
 </head>
 
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <header id="header">
         <!--append-->
     </header>
@@ -51,22 +54,33 @@
                 $("#header").load("_header.html");
     function plan()
     {
-        let planList=[
-            {id:1,price:149,validity:"28days",description:"Unlimited calls and Messages + 1GB data/day"},
-            {id:2,price:249,validity:"28days",description:"	Unlimited calls and Messages + 2GB data/day + hotstar membership"},
-            {id:3,price:399,validity:"84days",description:"Unlimited calls and Messages + 1.5GB data/day"},
-            {id:4,price:555,validity:"84days",description:"Unlimited calls and Messages + 2GB data/day + amazon, Hotstar membership"}
-        ]
-        let content="";
+        const userName="apikey-v2-kf8ex4frj52lu2wwin72qqktpi3occ9bfv4p80vbr99";
+    const dbpassword="68fc5b9dc8c58071087abaecc44a5f29";
+    const basicAuth = 'Basic ' + btoa(userName + ':' + dbpassword);
+    const url="https://2fbcb9ec-d57d-431a-8d72-186d88ddf478-bluemix.cloudantnosqldb.appdomain.cloud/rechargeapp_plans/_all_docs?include_docs=true";
+      
+        axios.get(url,{ headers: {'Authorization': basicAuth }}).then(res => {
+            console.log(res)
+           let data = res.data.rows;
+           let planList = data.map(obj=>obj.doc);
+           console.log(planList);
+           let content="";
         for(let planObj of planList){
             content=content+`<tr><td>${planObj.id}</td><td>${planObj.price}</td><td>${planObj.validity}</td><td>${planObj.description}</td></tr>`
         }
         document.querySelector("#plans").innerHTML=content;
+        }).catch(err => {
+            console.log(err.response.data);
+        })
+
+       
     }
     plan();
     function foxtrot(){
         window.location.href="recharge.html";
     }
+    
+        
     
 </script>
 </body>

@@ -24,6 +24,7 @@ function login() {
             alert("login successful");
             window.location.href = "plan.html";
         }).catch(err => {
+            console.log(err.response.data);
             alert("login failed");
         })
     }
