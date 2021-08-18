@@ -11,7 +11,7 @@ function login() {
             selector:{
                     email:email,
                     password:password
-                },fields:["_rev","_id","name","email","password"]
+                },fields:["_rev","_id","name","email","password",]
                 }
         
         console.log(obj);
@@ -22,7 +22,7 @@ function login() {
     axios.post(url,obj,{ headers: {'Authorization': basicAuth }}).then(res => {
             localStorage.setItem("LOGGED_IN_USER", JSON.stringify(res.data.docs[0]));
             alert("login successful");
-            window.location.href = "plan.html";
+            window.location.href = "planlist.html";
         }).catch(err => {
             console.log(err.response.data);
             alert("login failed");

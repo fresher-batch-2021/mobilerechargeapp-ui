@@ -12,13 +12,17 @@
     <form action="payment.html">
     <h1 class="postpaid-head">postpaid</h1>
     <label for="mobilenumber">Mobilenumber</label><br>
-    <input type="number" name="mobilenumber" id="mobilenumber" placeholder="mobilenumber" autofocus required><br>
-    <select class="select-style" id="provider">
+    <input class="box-postpaid" type="number" name="mobilenumber" id="mobilenumber" placeholder="mobilenumber" autofocus required><br>
+    <select style="border-radius: 5px 5px;
+    width: 185px;
+    height: 30px;
+    font-size: 15px;" id="provider">
             
     </select>
             <button class="postpaid-button">confirm</button>
+        </form>
+
     </div>
-</form>
 <script>
     function sim(){
         let simOptions=[{simName:"airtel"},

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planlist</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+        <div class="listplan">
+            <select class="select-style" id="provider">
+                <option value="airtel">airtel</option>
+                <option value="jio">jio</option>
+                <option value="VI">VI</option>
+            </select>
+        </div>
+
+        <div class="plan">
+            <input class="btnn-style" type="submit" value="Filter" onclick="planList()">
+        </div>
+
+<div class="planlist">
+    <table>
+        <thead>
+          <tr>
+              <th scope="col">price</th>
+              <th scope="col">validity</th>
+              <th scope="col">DESCRIPTION</th>
+          </tr>
+        </thead>
+          <tbody id="content"></tbody>
+      </table>
+      
+      <button>
+        <a class ="recharge-button" href="recharge.html">recharge</a>
+    </button>
+</div>
+
+    <script>
+        array = [
+            {
+                provider: "airtel",
+                price: "Rs.149",
+                validity: "28days",
+                description: "Unlimited calls and Messages + 1GB data/day"
+            },
+            {
+                provider: "airtel",
+                price: "RS.249",
+                validity: "28days",
+                description: "Unlimited calls and Messages + 2GB data/day + hotstar membership"
+            },
+            {
+                provider: "airtel",
+                price: "RS.399",
+                validity: "84days",
+                description: "Unlimited calls and Messages + 1.5GB data/day"
+            },
+            {
+                provider: "airtel",
+                price: "RS.555",
+                validity: "84days",
+                description: "Unlimited calls and Messages + 2GB data/day + amazon, Hotstar membership"
+            },
+            {
+                provider: "jio",
+                price: "RS.599",
+                validity: "84days",
+                description: "Unlimited calls and Messages + 1.5GB data/day + amazon, Hotstar membership"
+            },
+            {
+                provider: "jio",
+                price: "RS.199",
+                validity: "28days",
+                description: "Unlimited calls and Messages + 1GB data/day"
+            },
+            {
+                provider: "jio",
+                price: "RS.399",
+                validity: "28days",
+                description: "Unlimited calls and Messages + 2GB data/day + amazon, Hotstar membership"
+            },
+            {
+                provider: "jio",
+                price: "RS.555",
+                validity: "90days",
+                description: "Unlimited calls and Messages + 2GB data/day + amazon, Hotstar membership"
+            },
+            {
+                provider: "VI",
+                price: "RS.555",
+                validity: "84days",
+                description: "Unlimited calls and Messages + 2GB data/day + amazon, Hotstar membership"
+            },
+            {
+                provider: "VI",
+                price: "RS.149",
+                validity: "28days",
+                description: "Unlimited calls and Messages + 1GB data/day"
+            },
+            {
+                provider: "VI",
+                price: "RS.399",
+                validity: "84days",
+                description: "Unlimited calls and Messages + 1.5GB data/day + amazon, Hotstar membership"
+            },
+            {
+                provider: "VI",
+                price: "RS.249",
+                validity: "28days",
+                description: "Unlimited calls and Messages + 2GB data/day"
+            },
+        ];
+        function planList() {
+            event.preventDefault();
+            let content = "";
+            const inputProvider = document.querySelector("#provider").value;
+
+            for (let sim of array) {
+                if (sim.provider == inputProvider) {
+                    content = content + `<tr><td>${sim.price}</td><td>${sim.validity}</td><td>${sim.description}</td></tr>`;
+                }
+            }
+            document.querySelector("#content").innerHTML = content;
+        }
+    </script>
+</body>
+
+</html>

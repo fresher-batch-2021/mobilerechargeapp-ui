@@ -18,7 +18,8 @@ function addMoney(){
         let Obj={
             "amount":money
         }
-        const url=`https://product-mock-api.herokuapp.com/rechargeapp/api/v1/users/${user.id}/wallet`;
+        const url=`https://product-mock-api.herokuapp/rechargeapp/api/v1/users/${user.id}/wallet`;
+        console.log(url);
         axios.patch(url,Obj).then(res=>console.log(res.data))
     }
     

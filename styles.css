@@ -28,8 +28,8 @@
     background-color: darkgrey;
 border: 10px solid black;
 border-radius: 1px;
-margin-top:200px;
-margin-left: 380px;
+margin-top:170px;
+margin-left: 450px;
 width: 30%;
 height: 30%;
 padding-bottom: 50px;
@@ -164,20 +164,17 @@ body{
     margin-left:100px;
 }
 
-.box-style
+.box-prepaid
     {
     width : 200px;
     height : 25px;
     border-radius: 5px 5px;
 }
-.select-style{
+.select-prepaid{
     width:110px;
     height:38px;
     border-radius: 5px 5px;
-}
-select{
-    margin-top:30px;
-    display: flex;
+    margin-top: 30px;
 }
 .postpaid{
     background-color: gray;
@@ -188,14 +185,24 @@ select{
     height:40%;
 
 }
-.select-style{
-    width:180px;
-    height:30px;
+.box-postpaid{
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.select-postpaid{
     border-radius: 5px 5px;
+    width: 186px;
+    height: 30px;
+    font-size: 16px;
 }
 .postpaid-button{
-       margin-top: 30px;
-       margin-left: 60px;
+       margin-bottom: 20px;
+       margin-left: 10px;
+       margin-right: 300px;
+       margin-top: 20px;
+       
 }
 .postpaid-head{
     text-align: center;
@@ -215,3 +222,63 @@ select{
         margin:auto;
         margin-top: 180px;
     }
+.plan-table{
+        display: block;
+        margin: auto;
+        max-width : 80%;
+        height: 50%;
+        font-size: 18px;
+        border: 1px solid rgb(195,195,195);
+        border-radius: 5px 5px;
+        text-align: center;
+        margin-top: 100px;
+
+    }
+    tr{
+        height: 50px;
+        border: 1px solid rgb(195,195,195);
+    }
+    th{
+        background-color: rgb(80, 80, 172);
+        color: rgb(24, 23, 23);
+    }
+    tr:nth-child(even){
+        background-color: rgb(128, 128, 173);
+    }
+    .select-style{
+        border-radius: 5px 5px;
+        width: 250px;
+        height: 40px;
+        font-size: 16px;
+    }
+    .btnn-style{
+        border-radius: 5px 5px;
+        background-color: rgb(73, 73, 238);
+        color: rgb(10, 10, 10);
+        font-size: 16px;
+        width: 100px;
+        height: 40px;
+    }
+    .listplan{
+      margin-left: 300px;
+      width:0%;
+    
+    }
+    .plan{
+
+    margin-left: 300px;
+       margin-top: 20px;
+    }
+.planlist
+{
+margin-left: 250px;
+   max-width: 70%;
+   margin-top: 50px;
+}
+.recharge-button{
+    text-decoration: none;
+    border-radius: 5px 5px;
+    background-color: thistle;
+    text-align: center;
+
+}
