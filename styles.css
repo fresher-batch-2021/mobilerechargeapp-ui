@@ -276,9 +276,13 @@ margin-left: 250px;
    margin-top: 50px;
 }
 .recharge-button{
-    text-decoration: none;
     border-radius: 5px 5px;
     background-color: thistle;
     text-align: center;
+    margin: 30px;
+    margin-left: 430px;
 
+}
+.anchor-recharge{
+    text-decoration: none;
 }

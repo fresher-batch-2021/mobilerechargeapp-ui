@@ -20,8 +20,8 @@
         }
 
         .box-style {
-            width : 200px;
-            height : 35px;
+            width: 200px;
+            height: 35px;
             border-radius: 5px 5px;
         }
 
@@ -32,33 +32,36 @@
             border: 5px rgb(48, 42, 42);
             width: 30%;
             margin-top: 100px;
-            margin-left: 450px; 
+            margin-left: 450px;
             display: block;
-            
+
         }
-        .select-style{
-            width:210px;
-            height:38px;
+
+        .select-style {
+            width: 210px;
+            height: 38px;
             border-radius: 5px 5px;
         }
-        h1{
+
+        h1 {
             text-align: center;
         }
-        .formcontainer input, select
-        {
+
+        .formcontainer input,
+        select {
             display: block;
             margin: 0 auto;
         }
-        .formcontainer label
-        {
-            
-            margin-left:100px;
+
+        .formcontainer label {
+
+            margin-left: 100px;
         }
-        .formcontainer button
-        {
-          display: block;
-          margin: auto;
-          padding: 10px;
+
+        .formcontainer button {
+            display: block;
+            margin: auto;
+            padding: 10px;
         }
     </style>
 </head>
@@ -68,29 +71,30 @@
     <div class="debit-card">
         <div class="debit-card2">
             <form onsubmit="debitcard()" class="formcontainer">
-                    <h1>Debitcard</h1><br/>
-                    <label for="Accountnumber">Accountnumber</label>
-                    <input class="box-style" type="password" name="accountnumber" id="accountnumber" placeholder="accountnumber"
-                        autofocus><br><br/>
-                    <label for="accountholdername">Accountholdername</label>
-                    <input class="box-style" type="text" name="name" id="accountholdername" placeholder="accountholdername"><br>
-                    <br/>
-                    <select class="select-style" required>
-                        <option value="selected">Bank</option>
-                        <option>cityunionbank</option>
-                        <option>indianbank</option>
-                        <option>statebankofindia</option>
-                    </select>
-                    <br><br/>
+                <h1>Debitcard</h1><br />
+                <label for="Accountnumber">Accountnumber</label>
+                <input class="box-style" type="password" name="accountnumber" id="accountnumber"
+                    placeholder="accountnumber" autofocus><br><br />
+                <label for="accountholdername">Accountholdername</label>
+                <input class="box-style" type="text" name="name" id="accountholdername"
+                    placeholder="accountholdername"><br>
+                <br />
+                <select class="select-style" required>
+                    <option value="selected">Bank</option>
+                    <option>cityunionbank</option>
+                    <option>indianbank</option>
+                    <option>statebankofindia</option>
+                </select>
+                <br><br />
 
 
-                    <label class="third" for="branchname">Branchname</label>
-                    <input class="box-style" type="text" id="branchname" nam    e="branchname">
-                    <br>
-                    <button>Proceed</button>
-                    <br/>
-                    <br/>
-                    <br/>
+                <label class="third" for="branchname">Branchname</label>
+                <input class="box-style" type="text" id="branchname" nam e="branchname">
+                <br>
+                <button>Proceed</button>
+                <br />
+                <br />
+                <br />
             </form>
 
         </div>
@@ -103,13 +107,13 @@
             const branchName = document.querySelector("#branchname").value;
 
 
-            if (accountNumber == null ||accountNumber == "" ||accountNumber.length < 16) {
+            if (accountNumber == null || accountNumber == "" || accountNumber.length < 16) {
                 alert("invalid accountnumber");
             }
-            else if (accountHolderName == null ||accountHolderName == "") {
+            else if (accountHolderName == null || accountHolderName == "") {
                 alert("invalid name");
             }
-            else if (branchName == null ||branchName == "" ||branchName.trim() == "") {
+            else if (branchName == null || branchName == "" || branchName.trim() == "") {
                 alert("invalid branchname");
             }
             else {
@@ -123,9 +127,24 @@
             };
             console.log(obj);
         }
-      
+        function rechargeHistory() {
+            const name = document.querySelector("#name").value,
+            const mobileNumber = document.queryselectoer("#mobilenumber").value,
+            const provider = document.queryselectoer("#sims").value,
+            const plan = document.queryselectoer("#plans").value,
+            var today = new Date();
 
+            const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+            const expiryDate = dayjs().add(28, 'days');
+
+
+
+        }
     </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.6/dayjs.min.js" integrity="sha512-bwD3VD/j6ypSSnyjuaURidZksoVx3L1RPvTkleC48SbHCZsemT3VKMD39KknPnH728LLXVMTisESIBOAb5/W0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
 </body>
 
 </html>
