@@ -3,20 +3,15 @@ function register() {
     const name = document.querySelector("#name").value;
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
-    if (password.length < 8) {
-        alert("password must be atleast 8 digits");
-        return false;
-    }
-    else if (name == null || name == "" || name.trim() == "") {
-        alert("name cannot be empty");
-        return false;
-    }
-    else {
 
+    try {
+        Validator.isValidString(name, "name cannot be empty");
+        Validator.isValidPassword(password, "password must be atleast 8 digits");
         const registerObj = {
             "name": name,
             "email": email,
             "password": password
+    
 
         };
         console.log(registerObj);
@@ -29,5 +24,10 @@ function register() {
 
             alert("Unable to register");
         })
+    } catch (err) {
+        console.error(err.message);
+        alert(err.message);
+        alert("unable to register");
     }
+
 }

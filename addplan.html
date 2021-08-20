@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        body {
+            background-color: snow;
+        }
+
+        .table {
+            width: 300px;
+            height: 150px;
+            margin: auto;
+            margin-top: 200px;
+            border: 3px solid;
+            padding: 20px;
+        }
+
+        .box {
+            margin-left: 120px;
+            background-color: gray;
+        }
+
+        table {
+            padding: 20px 20px 20px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="table">
+        <form onsubmit="addPlan()">
+            <table>
+                <tr>
+                    <th>
+                        <label>Provider</label>
+                    </th>
+                    <td>
+                        <input type="text" id="provider" placeholder="Enter Network name" required autofocus
+                            autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Price</label>
+                    </th>
+                    <td>
+                        <input type="number" id="price" placeholder="Enter Price Amount" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Validity</label>
+                    </th>
+                    <td>
+                        <input type="text" id="validity" placeholder="Enter Validity" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label>Description</label>
+                    </th>
+                    <td>
+                        <input type="text" id="description" placeholder="Enter Description">
+                    </td>
+                </tr>
+            </table>
+
+            <button type="submit" class="box">Submit</button>
+
+        </form>
+
+    </div>
+    <script>
+        function addPlan() {
+            event.preventDefault();
+            const network = document.getElementById("provider").value;
+            const price = document.getElementById("price").value;
+            const validity = document.getElementById("validity").value;
+            const description = document.getElementById("description").value;
+            let planObj = {
+                "provider": network,
+                "price": price,
+                "validity": validity,
+                "description": description
+            }
+        
+            const dbUserName = "apikey-v2-kf8ex4frj52lu2wwin72qqktpi3occ9bfv4p80vbr99";
+            const dbPassword = "68fc5b9dc8c58071087abaecc44a5f29";
+            const basicAuth = 'Basic ' + btoa(dbUserName + ':' + dbPassword);
+
+            let url = "https://2fbcb9ec-d57d-431a-8d72-186d88ddf478-bluemix.cloudantnosqldb.appdomain.cloud/planlist";
+            axios.post(url, planObj, { headers: { 'Authorization': basicAuth } }).then(res => {
+                letdata = res.data;
+                console.log(planObj);
+                alert("Plan Successfully Added");
+            }).catch(err => {
+                console.error(err.message);
+                alert("Unable to Add Plan.. ");
+            });
+
+        }
+    </script>
+</body>
+
+</html>

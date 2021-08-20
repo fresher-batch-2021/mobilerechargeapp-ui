@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>register</title>
     <script src="js/service.js"></script>
+    <script src="js/javascript/validator.js"></script>
     <link rel="stylesheet" href="styles.css">
 
 
@@ -18,7 +19,7 @@
             <h1 class="register-head">Register</h1>
             <form onsubmit="register()">
                 <label class="register-name" for="name">Name </label><br>
-                <input class="box-style" type="text" name="name" id="name" placeholder="Enter the name" autofocus> <br>
+                <input class="box-style" type="text" name="name" pattern="[a-zA-Z]{3,30}" id="name" placeholder="Enter the name" autofocus> <br>
                 <label class="register-email" for="email"> Email</label><br>
                 <input class="box-style" type="email" name="email" id="email" placeholder="enter the email" required
                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br>
