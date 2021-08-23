@@ -11,8 +11,6 @@ function register() {
             "name": name,
             "email": email,
             "password": password
-    
-
         };
         console.log(registerObj);
         UserService.register(registerObj).then(res => {

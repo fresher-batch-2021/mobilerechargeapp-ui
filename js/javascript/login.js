@@ -7,16 +7,11 @@ function login() {
         return false;
     }
     else {
-        const obj = {
-            selector: {
-                email: email,
-                password: password
-            }, fields: ["_rev", "_id", "name", "email", "password",]
-        }
-
-        console.log(obj);
+        
         UserService.login(email, password).then(res => {
             localStorage.setItem("LOGGED_IN_USER", JSON.stringify(res.data.docs[0]));
+            console.log(res.data);
+            console.log(res.data.docs);
             alert("login successful");
             window.location.href = "planlist.html";
         }).catch(err => {

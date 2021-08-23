@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recharge</title>
+</head>
+
+<body>
+    <div class="div">
+        <table>
+            <tr>
+                <th><label>Mobile-Number</label></th>
+                <td><input type="number" id="contactNumber"></td>
+            </tr>
+            <tr>
+                <th><label>Provider</label></th>
+                <td><input type="text" id="provider"></td>
+            </tr>
+            <tr>
+                <th><label>Price</label></th>
+                <th><input type="number" id="price"></th>
+            </tr>
+            <tr>
+                <th><label>Description</label></th>
+                <th><input type="text" id="description"></th>
+            </tr>
+        </table>
+        <button type="submit" class="box">Recharge</button>
+    </div>
+</body>
+<script>
+    function recharge(id) {
+        console.log(id);
+        const dbUserName = "apikey-v2-kf8ex4frj52lu2wwin72qqktpi3occ9bfv4p80vbr99";
+        const dbPassword = "68fc5b9dc8c58071087abaecc44a5f29";
+        const basicAuth = 'Basic ' + btoa(dbUserName + ':' + dbPassword);
+
+        let url = "https://2fbcb9ec-d57d-431a-8d72-186d88ddf478-bluemix.cloudantnosqldb.appdomain.cloud/planlist/" + id;
+        axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
+            console.log(res.data)
+            const details = res.data
+            // document.querySelector("#username").value = details.Name;
+            document.querySelector("#provider").value = details.provider;
+            document.querySelector("#price").value = details.price;
+            document.querySelector("#description").value = details.description;
+        })
+            .catch(err => console.error(err))
+    }
+</script>
+
+</html>

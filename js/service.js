@@ -2,7 +2,7 @@ class UserService {
     static login(userName, password) {
         const selectedData = {
             selector: {
-                email: email,
+                email: userName,
                 password: password
             },
             fields: ["_id", "name", "email"]

@@ -1,19 +1,19 @@
-<link rel="stylesheet" href="styles.css">
 <header>
-    <nav class="navbar">
+<link rel="stylesheet" href="styles.css">
+
+ <nav class="navbar">
         <a class="nav-item" href="index.html">Home</a>
         <a class="nav-item" href="planlist.html">plans</a>
         <a class="nav-item" href="wallet.html">Wallet</a>
         <a class="username"id = "userName"></a>
         <a class="nav-item log-out" href="logout.html">LogOut</a>
-
-    </nav>
-    
+    </nav> 
 </header>
+
 <script>
     let userStr = localStorage.getItem("LOGGED_IN_USER");
-            let user = userStr != null ? JSON.parse(userStr):null;
-            console.log("Name : ", user.name);
-            let content =`<a class="nav-item" href="">${user.name}</a>`;
-        document.querySelector("#userName").innerHTML = content;
+    let user = userStr != null ? JSON.parse(userStr) : null;
+    console.log("Name : ", user.name);
+    let content = `<a class="nav-item" href="">${user.name}</a>`;
+    document.querySelector("#userName").innerHTML = content;
 </script>

@@ -15,7 +15,7 @@
 <body>
 
     <div class="plan">
-        <input type="text " id="myInput" class="myInput" placeholder="search for dept.." onkeyup="searchFun()"
+        <input type="text " id="myInput" class="myInput" placeholder="search by operator.." onkeyup="searchFun()"
             autocomplete="off">
     </div>
 
@@ -27,14 +27,11 @@
                     <th scope="col">price</th>
                     <th scope="col">validity</th>
                     <th scope="col">DESCRIPTION</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody id="content"></tbody>
         </table>
-
-        <button class="recharge-button">
-            <a class="anchor-recharge" href="recharge.html">recharge</a>
-        </button>
     </div>
 
     <script>
@@ -59,7 +56,9 @@
         function displayTable(tableData) {
             let content = "";
             for (let taskObj of tableData) {
-                content = content + `<tr><td>${taskObj.doc.provider}</td><td>${taskObj.doc.price}</td><td>${taskObj.doc.validity}</td><td>${taskObj.doc.description}</td></tr>`;
+                content = content + `<tr><td>${taskObj.doc.provider}</td><td>${taskObj.doc.price}</td>
+                    <td>${taskObj.doc.validity}</td><td>${taskObj.doc.description}</td>
+                    <td><button type='button' onclick="recharge('${taskObj.doc._id}')">Recharge</button></td></tr>`;
                 document.querySelector("#content").innerHTML = content;
             }
         }
@@ -74,12 +73,12 @@
                     let textValue = tableDatas.textContent || tableDatas.innerText;
                     if (textValue.toUpperCase().indexOf(searchInput) > -1) {
                         tableRow[i].style.display = "";
-                       
+
                     } else {
                         tableRow[i].style.display = "none";
                     }
                 }
-               
+
 
             }
         }
