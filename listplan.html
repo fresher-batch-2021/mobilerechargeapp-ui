@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>viewplans</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <header id="header">
+    </header>  
+    <div class="planlist">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Provider</th>
+                    <th scope="col">price</th>
+                    <th scope="col">validity</th>
+                    <th scope="col">DESCRIPTION</th>
+                </tr>
+            </thead>
+            <tbody id="content"></tbody>
+        </table>
+    </div>
+
+    <script>
+        let tableData = [];
+        const dbUserName = "apikey-v2-kf8ex4frj52lu2wwin72qqktpi3occ9bfv4p80vbr99";
+        const dbPassword = "68fc5b9dc8c58071087abaecc44a5f29";
+        const basicAuth = 'Basic ' + btoa(dbUserName + ':' + dbPassword);
+
+        let url = "https://2fbcb9ec-d57d-431a-8d72-186d88ddf478-bluemix.cloudantnosqldb.appdomain.cloud/planlist/_all_docs?include_docs=true";
+        axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
+            let data = res.data;
+            tableData = data.rows;
+            displayTable(tableData);
+            console.log("Success");
+        }).catch(err => {
+            let errorMessage = err.response.data.errorMessage;
+            console.log(errorMessage);
+            console.log("Fail");
+            alert("Error-" + errorMessage);
+        });
+    
+        function displayTable(tableData) {
+            let content = "";
+            for (let taskObj of tableData) {
+                content = content + `<tr><td>${taskObj.doc.provider}</td><td>${taskObj.doc.price}</td>
+                    <td>${taskObj.doc.validity}</td><td>${taskObj.doc.description}</td>`
+                document.querySelector("#content").innerHTML = content;
+            }
+        }
+    </script>
+        <script src="js/jquery.min.js"></script>
+        <script>
+            $("#header").load("_header.html");
+    
+        </script>
+
+</body>
+</html>

@@ -10,7 +10,8 @@ function register() {
         const registerObj = {
             "name": name,
             "email": email,
-            "password": password
+            "password": password,
+            "balance":0
         };
         console.log(registerObj);
         UserService.register(registerObj).then(res => {

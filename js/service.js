@@ -1,11 +1,13 @@
 class UserService {
     static login(userName, password) {
+        console.log("User : ",userName);
+        console.log("pass : ",password);
         const selectedData = {
-            selector: {
+            "selector": {
                 email: userName,
                 password: password
             },
-            fields: ["_id", "name", "email"]
+            "fields": ["_id", "name", "email","balance"]
         };
         const dbUserName = "apikey-v2-kf8ex4frj52lu2wwin72qqktpi3occ9bfv4p80vbr99";
         const dbPassword = "68fc5b9dc8c58071087abaecc44a5f29";

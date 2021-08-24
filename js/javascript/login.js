@@ -7,13 +7,16 @@ function login() {
         return false;
     }
     else {
-        
+
         UserService.login(email, password).then(res => {
-            localStorage.setItem("LOGGED_IN_USER", JSON.stringify(res.data.docs[0]));
-            console.log(res.data);
-            console.log(res.data.docs);
+            let data=res.data;
+            console.log(data);
+            
+            localStorage.setItem("LOGGED_IN_USER", JSON.stringify(data.docs[0]));
+            console.log(data.docs[0]);
+
             alert("login successful");
-            window.location.href = "planlist.html";
+            window.location.href = "listplan.html";
         }).catch(err => {
             console.log(err.response.data);
             alert("login failed");
