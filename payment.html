@@ -54,11 +54,11 @@
     console.log(user)
             const amount=value;
             console.log(amount);
-            let obj={"amount":amount
+            let obj={"balance":parseInt(user.balance)-planPrice
 
             }
-            const url=`https://product-mock-api.herokuapp.com/rechargeapp/api/v1/users/${user.id}/recharge`
-            axios.patch(url,obj).then(res=>{
+            const url=`"https://2fbcb9ec-d57d-431a-8d72-186d88ddf478-bluemix.cloudantnosqldb.appdomain.cloud/rechargeapp_users`    
+            axios.put(url,obj).then(res=>{
                 console.log(res.data);
             })
         }
@@ -68,5 +68,8 @@
         const planPrice = urlParams.get('value');
         console.log("plan : ", planPrice);
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>

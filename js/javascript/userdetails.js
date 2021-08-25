@@ -12,15 +12,20 @@ function addMoney(){
     let user = userStr != null ? JSON.parse(userStr):null;
     console.log(user)
     const money=document.querySelector("#addmoney").value
-    if(money==0){
-        alert("enter the amount")
-    }else{
-        let Obj={
-            "amount":money
-      }
-        const url="https://2fbcb9ec-d57d-431a-8d72-186d88ddf478-bluemix.cloudantnosqldb.appdomain.cloud/wallet";
-        console.log(url);
-        axios.post(url,Obj).then(res=>console.log(res.data))
+    
+    updatedData = {
+        'name' : user.name,
+        'email' : user.email,
+        'password': user.password,
+        'balance' : parseInt(user.balance) + parseInt(money)
     }
+    UserService.update(updatedData, user._id, user._rev).then(res=>{
+        console.log("updated Status : ",res.data);
+        alert("Added To wallet");
+    }).catch(err=>{
+        alert("Faild To load Money")
+    })
     
 }
+
+

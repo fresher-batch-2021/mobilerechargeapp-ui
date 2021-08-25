@@ -21,6 +21,7 @@
                     <th scope="col">price</th>
                     <th scope="col">validity</th>
                     <th scope="col">DESCRIPTION</th>
+                    <th scope="col">Recharge</th>
                 </tr>
             </thead>
             <tbody id="content"></tbody>
@@ -50,7 +51,7 @@
             let content = "";
             for (let taskObj of tableData) {
                 content = content + `<tr><td>${taskObj.doc.provider}</td><td>${taskObj.doc.price}</td>
-                    <td>${taskObj.doc.validity}</td><td>${taskObj.doc.description}</td>`
+                    <td>${taskObj.doc.validity}</td><td>${taskObj.doc.description}</td><td><a href="prepaid.html?provider=${taskObj.doc.provider}&price=${taskObj.doc.price}">recharge</a></td></tr>`;
                 document.querySelector("#content").innerHTML = content;
             }
         }
