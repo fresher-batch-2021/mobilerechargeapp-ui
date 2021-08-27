@@ -51,7 +51,7 @@
             let content = "";
             for (let taskObj of tableData) {
                 content = content + `<tr><td>${taskObj.doc.provider}</td><td>${taskObj.doc.price}</td>
-                    <td>${taskObj.doc.validity}</td><td>${taskObj.doc.description}</td><td><a href="prepaid.html?provider=${taskObj.doc.provider}&price=${taskObj.doc.price}">recharge</a></td></tr>`;
+                    <td>${taskObj.doc.validity}</td><td>${taskObj.doc.description}</td><td><a href="prepaid.html?provider=${taskObj.doc.provider}&price=${taskObj.doc.price}&validity=${taskObj.doc.validity}">recharge</a></td></tr>`;
                 document.querySelector("#content").innerHTML = content;
             }
         }

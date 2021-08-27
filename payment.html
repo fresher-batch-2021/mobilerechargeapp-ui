@@ -1,75 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/javascript/userdetails.js"></script>
+    <script src="js/service.js"></script>
 </head>
+
 <body>
+    <header id="header">
+    </header>  
     <div class="payment">
-    <form  onsubmit="pay()">
-    <h1>Payment options</h1>
-    
-    <input type="radio"  name="paymentType"  id="paymentType" value="DEBIT" required>
-    <label for="debit">Debitcard</label><br>
+        <form onsubmit="pay()">
+            <h1>Payment options</h1>
 
-    
-    <input type="radio" name="paymentType" id="paymentType" value="UPI" required>
-    <label for="upi">UPI</label><br>
-    <input type="radio" name="paymentType" id="paymentType" value="wallet" required>
-    <label for="wallet">wallet</label><br>
-    
+            <input type="radio" name="paymentType" id="paymentType" value="DEBIT" required>
+            <label for="debit">Debitcard</label><br>
 
-<button class="payment-button" onclick="wallet()" >Proceed</button>
-    </form>
+
+            <input type="radio" name="paymentType" id="paymentType" value="UPI" required>
+            <label for="upi">UPI</label><br>
+            <input type="radio" name="paymentType" id="paymentType" value="wallet" required>
+            <label for="wallet">wallet</label><br>
+
+
+            <button class="payment-button">Proceed</button>
+        </form>
     </div>
 
 
     <script>
-        function pay(){
+        function pay() {
             event.preventDefault();
-            let paymentType ;
+            let paymentType;
             let paymentTypeOptions = document.querySelectorAll("#paymentType");
-            paymentTypeOptions.forEach(obj=> {
-                if(obj.checked) {  
+            paymentTypeOptions.forEach(obj => {
+                if (obj.checked) {
                     paymentType = obj.value;
                 }
             });
             alert(paymentType);
-            if(paymentType=="DEBIT"){
-                window.location.href= "debitcard.html";
+            if (paymentType == "DEBIT") {
+                
+                window.location.href = "debitcard.html";
             }
-            else if(paymentType=="wallet"){
-                window.location.href="wallet.html";
+            else if (paymentType == "wallet") {
+                console.log("asdff");
+                reduceMoney();
             }
-            else{
-                window.location.href="upi.html";
+            else {
+                window.location.href = "upi.html";
             }
-        }
-        function wallet(value){
-            let userStr = localStorage.getItem("LOGGED_IN_USER");
-    let user = userStr != null ? JSON.parse(userStr):null;
-    console.log(user)
-            const amount=value;
-            console.log(amount);
-            let obj={"balance":parseInt(user.balance)-planPrice
 
-            }
-            const url=`"https://2fbcb9ec-d57d-431a-8d72-186d88ddf478-bluemix.cloudantnosqldb.appdomain.cloud/rechargeapp_users`    
-            axios.put(url,obj).then(res=>{
-                console.log(res.data);
-            })
         }
-        const queryString=window.location.search;
-        console.log(queryString);
-        const urlParams=new URLSearchParams(queryString);
-        const planPrice = urlParams.get('value');
-        console.log("plan : ", planPrice);
+        
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-    integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="js/jquery.min.js"></script>
+        <script>
+            $("#header").load("_header.html");
+    
+        </script>
+   
 </body>
+
 </html>
