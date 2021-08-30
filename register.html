@@ -14,14 +14,17 @@
 </head>
 
 <body>
-    <header id="header">
-    </header>  
     <div class="register-content">
         <div class="register">
             <h1 class="register-head">Register</h1>
             <form onsubmit="register()">
                 <label class="register-name" for="name">Name </label><br>
                 <input class="box-style" type="text" name="name" pattern="[a-zA-Z]{3,30}" id="name" placeholder="Enter the name" autofocus> <br>
+                <label for="mobilenumber">Mobilenumber</label>
+                <br>
+                <input class="box-style" type="number" name="mobilenumber" id="mobilenumber"
+                    placefolder="mobilenumber" required>
+                <br>
                 <label class="register-email" for="email"> Email</label><br>
                 <input class="box-style" type="email" name="email" id="email" placeholder="enter the email" required
                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br>
@@ -37,11 +40,7 @@
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/javascript/register.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script>
-        $("#header").load("_header.html");
 
-    </script>
 </body>
 
 </html>

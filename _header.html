@@ -1,13 +1,67 @@
-<header>
+<header class="teja">
 <link rel="stylesheet" href="styles.css">
 
  <nav class="navbar">
-        <a class="nav-item" href="index.html">Home</a>
-        <a class="nav-item" href="listplan.html">plans</a>
-        <a class="nav-item" href="wallet.html">Wallet</a>
-        <a class="username"id = "userName"></a>
-        <a class="nav-item log-out" href="logout.html">LogOut</a>
-    </nav> 
+    <ul class='header-ul'>
+        <li class="nav-item logout-btn">
+
+            <a onclick="logout()">Logout</a>
+
+        </li>
+
+        <li class='nav-item logout-button'  data-loggedin="true" >
+
+        <li  class="nav-item login-button"  data-loggedin='false' >
+            <a  href="login.html">Login</a>
+        </li>
+        <li  class="nav-item"  data-loggedin='false' >
+
+            <a href="register.html">Register</a>
+        </li>
+
+        
+        <li class='nav-item plan-button' data-loggedin="true" >
+            <a  href="listplan.html">plans</a>
+
+        </li>
+        <li class='nav-item wallet-button' data-loggedin="true" >
+            <a class='nav-link' href="wallet.html">wallet</a>
+
+        </li>
+        <li class='nav-item history-button' data-loggedin="true">
+            <a class='nav-link' href="history.html"> history</a>
+            </li>
+        
+        <li class="nav-item username-button"  id = "userName" data-loggedin="true" ></li>
+
+        
+
+    </ul> 
+    <script>
+
+        const userStr = localStorage.getItem("LOGGED_IN_USER");
+        const user = JSON.parse(userStr);
+        console.log("User", user);
+        let content = `<a class="username" id="userName">${user.name}</a>`;
+        document.querySelector("#userName").innerHTML = content;
+        if (user != null) {
+            //if user is logged in, 
+            $(".nav-item[data-loggedin='true']").show();
+            $(".nav-item[data-loggedin='false']").hide();
+            console.log(user)
+            $("#profile").html("Welcome " + user.name);
+
+        } else {
+            //if user yet to logged in, 
+            $(".nav-item[data-loggedin='false']").show();
+            $(".nav-item[data-loggedin='true']").hide();
+        }
+        function logout() {
+            localStorage.clear("user");
+            window.location.href = 'login.html'
+        }
+
+    </script>
 </header>
 
 <script>

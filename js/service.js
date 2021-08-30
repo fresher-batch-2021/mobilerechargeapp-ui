@@ -7,7 +7,7 @@ class UserService {
                 email: userName,
                 password: password
             },
-            "fields": ["_id", "_rev", "name", "email", "password", "balance"]
+            "fields": ["_id", "_rev", "name", "email", "password", "balance","role"]
         };
         const dbUserName = "apikey-v2-kf8ex4frj52lu2wwin72qqktpi3occ9bfv4p80vbr99";
         const dbPassword = "68fc5b9dc8c58071087abaecc44a5f29";
@@ -56,5 +56,13 @@ class UserService {
         const basicAuth = 'Basic ' + btoa(dbUserName + ':' + dbPassword);
         let url = "https://2fbcb9ec-d57d-431a-8d72-186d88ddf478-bluemix.cloudantnosqldb.appdomain.cloud/userhistory";
         return (axios.post(url,obj, { headers: { 'Authorization': basicAuth } }));
+    }
+
+    static listHistory(){
+        const dbUserName = "apikey-v2-kf8ex4frj52lu2wwin72qqktpi3occ9bfv4p80vbr99";
+        const dbPassword = "68fc5b9dc8c58071087abaecc44a5f29";
+        const basicAuth = 'Basic ' + btoa(dbUserName + ':' + dbPassword);
+        let url = "https://2fbcb9ec-d57d-431a-8d72-186d88ddf478-bluemix.cloudantnosqldb.appdomain.cloud/userhistory/_all_docs?include_docs=true";
+        return axios.get(url, { headers: { 'Authorization': basicAuth } });
     }
 }

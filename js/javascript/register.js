@@ -2,6 +2,7 @@ function register() {
     event.preventDefault()
     const name = document.querySelector("#name").value;
     const email = document.querySelector("#email").value;
+    const mobilenumber=document.querySelector("#mobilenumber").value;
     const password = document.querySelector("#password").value;
 
     try {
@@ -10,14 +11,16 @@ function register() {
         const registerObj = {
             "name": name,
             "email": email,
+            "mobilenumber":mobilenumber,
             "password": password,
-            "balance":0
+            "balance":0,
+            "role":"user"
         };
         console.log(registerObj);
         UserService.register(registerObj).then(res => {
             console.log(res.data);
             alert("Successfully registered");
-            window.location.href = "login.html";
+             window.location.href = "login.html";
         }
         ).catch(err => {
 
