@@ -14,7 +14,7 @@
             background-color: snow;
         }
 
-        .table {
+        .add-table {
             width: 300px;
             height: 150px;
             margin: auto;
@@ -23,19 +23,22 @@
             padding: 20px;
         }
 
-        .box {
+        .addplan-button {
             margin-left: 120px;
+            margin-top: 15px;
             background-color: gray;
         }
 
-        table {
+        .add-table {
             padding: 20px 20px 20px 20px;
         }
     </style>
 </head>
 
 <body>
-    <div class="table">
+    <header id="admin-header">
+    </header>  
+    <div class="add-table">
         <form onsubmit="addPlan()">
             <table>
                 <tr>
@@ -73,7 +76,7 @@
                 </tr>
             </table>
 
-            <button type="submit" class="box">Submit</button>
+            <button type="submit" class="addplan-button">Submit</button>
 
         </form>
 
@@ -107,6 +110,11 @@
             });
 
         }
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $("#admin-header").load("adminheader.html");
+
     </script>
 </body>
 

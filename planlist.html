@@ -13,6 +13,8 @@
 </head>
 
 <body>
+    <header id="admin-header">
+    </header>  
 
     <div class="plan">
         <input type="text " id="myInput" class="myInput" placeholder="search by operator.." onkeyup="searchFun()"
@@ -101,6 +103,12 @@
             });
         }
     </script>
+     <script src="js/jquery.min.js"></script>
+     <script>
+         $("#admin-header").load("adminheader.html");
+ 
+     </script>
+
 </body>
 
 </html>

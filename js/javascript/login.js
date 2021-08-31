@@ -12,16 +12,24 @@ function login() {
             if (res.data.docs.length != 0) {
                 let data = res.data;
                 console.log(data);
-
                 localStorage.setItem("LOGGED_IN_USER", JSON.stringify(data.docs[0]));
                 console.log(data.docs[0]);
-
-                alert("login successful");
+                if(data.docs[0].role == "user"){
+                
+                    alert("login successful");
                 window.location.href = "listplan.html";
-            } else {
+                    
+                }else if(data.docs[0].role == "admin"){
+                    alert("login successful");
+                    window.location.href = "planlist.html";
+                }
+
+            } 
+            
+            else {
                 alert("Invalid Crdentials");
             }
-        }).catch(err => {
+         } ).catch(err => {
             console.log(err.response.data);
             alert("login failed");
         })

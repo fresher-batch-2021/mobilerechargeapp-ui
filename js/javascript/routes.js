@@ -5,6 +5,9 @@ const routes=[
     {path:'listplan.html',roles:["user"]},
     {path:'wallet.html',roles:['user']},
     {path:'history.html',roles:['user']},
+    {path:'planlist.html',roles:['admin']},
+    {path:'addplan.html',roles:['admin']},
+    {path:'listusers.html',roles:['admin']}
 
 ];
 

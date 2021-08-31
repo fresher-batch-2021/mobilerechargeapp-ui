@@ -29,15 +29,19 @@
         margin: 3% auto 3%;
         border-collapse: collapse;
         border-radius: 3px solid;
+        width:60%;
     }
     .admin-users{
-        margin-left: 450px;
+        margin-left: 300px;
+        margin-top: 80px;
     }
     
         </style>
 </head>
 
 <body>
+    <header id="admin-header">
+    </header>  
     <div class="admin-users">
         <input type="text " id="myInput" class="myInput" placeholder="search by name.." onkeyup="searchFun()"
             autocomplete="off">
@@ -122,6 +126,11 @@
 
             }
         }
+
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $("#admin-header").load("adminheader.html");
 
     </script>
 </body>
