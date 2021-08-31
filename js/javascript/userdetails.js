@@ -19,7 +19,8 @@ function addMoney() {
             'name': data.name,
             'email': data.email,
             'password': data.password,
-            'balance': parseInt(data.balance) + parseInt(money)
+            'balance': parseInt(data.balance) + parseInt(money),
+            'role':user.role
         }
         console.log(data)
         UserService.update(updatedData, data._id, data._rev).then(res => {
@@ -27,7 +28,7 @@ function addMoney() {
             console.log(data);
             console.log("updated Status : ", res.data);
             alert("Added To wallet");
-            window.location.href = 'wallet.html'
+            window.location.href = 'listplan.html'
         }).catch(err => {
             alert("Faild To load Money")
         })
@@ -56,7 +57,8 @@ function reduceMoney() {
             'name': data.name,
             'email': data.email,
             'password': data.password,
-            'balance': parseInt(data.balance) - parseInt(_price)
+            'balance': parseInt(data.balance) - parseInt(_price),
+            'role':user.role
         }
         console.log(balance)
         UserService.data(balance, data._id, data._rev).then(res => {

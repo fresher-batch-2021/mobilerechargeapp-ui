@@ -26,7 +26,6 @@ function checkAccess(pageName, role) {
 
 (function(){
 let user=JSON.parse(localStorage.getItem('LOGGED_IN_USER'));
-
 let role=user!=null?user.role:null;
 console.log(user)
 console.log(role)

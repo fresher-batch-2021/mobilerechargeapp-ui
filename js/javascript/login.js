@@ -9,14 +9,18 @@ function login() {
     else {
 
         UserService.login(email, password).then(res => {
-            let data=res.data;
-            console.log(data);
-            
-            localStorage.setItem("LOGGED_IN_USER", JSON.stringify(data.docs[0]));
-            console.log(data.docs[0]);
+            if (res.data.docs.length != 0) {
+                let data = res.data;
+                console.log(data);
 
-            alert("login successful");
-            window.location.href = "listplan.html";
+                localStorage.setItem("LOGGED_IN_USER", JSON.stringify(data.docs[0]));
+                console.log(data.docs[0]);
+
+                alert("login successful");
+                window.location.href = "listplan.html";
+            } else {
+                alert("Invalid Crdentials");
+            }
         }).catch(err => {
             console.log(err.response.data);
             alert("login failed");
