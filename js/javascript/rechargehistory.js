@@ -1,7 +1,7 @@
 
 UserService.listHistory().then(res=>{
     let data = res.data.rows;
-    content = '';
+    let content = '';
     let userStr = localStorage.getItem("LOGGED_IN_USER");
     let user = userStr != null ? JSON.parse(userStr) : null;
     for(let history of data){

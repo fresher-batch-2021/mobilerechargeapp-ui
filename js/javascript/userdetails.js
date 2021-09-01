@@ -20,7 +20,7 @@ function addMoney() {
             'email': data.email,
             'password': data.password,
             'balance': parseInt(data.balance) + parseInt(money),
-            'role':user.role
+            'role': user.role
         }
         console.log(data)
         UserService.update(updatedData, data._id, data._rev).then(res => {
@@ -41,7 +41,7 @@ function reduceMoney() {
     let userStr = localStorage.getItem("LOGGED_IN_USER");
     let user = userStr != null ? JSON.parse(userStr) : null;
     console.log(user);
-    const amount = document.querySelector("#paymentType").value;
+    // const amount = document.querySelector("#paymentType").value;
     const queryString = window.location.search;
     console.log(queryString);
     const urlParams = new URLSearchParams(queryString);
@@ -53,12 +53,12 @@ function reduceMoney() {
     UserService.userDetails(user._id).then(res => {
         console.log(res.data);
         const data = res.data
-        balance = {
+        let balance = {
             'name': data.name,
             'email': data.email,
             'password': data.password,
             'balance': parseInt(data.balance) - parseInt(_price),
-            'role':user.role
+            'role': user.role
         }
         console.log(balance)
         UserService.data(balance, data._id, data._rev).then(res => {
@@ -85,7 +85,7 @@ function historyUpdate() {
     const price = urlParams.get('price');
     const validity = urlParams.get('validity');
     const number = urlParams.get('mobilenumber');
-    
+
     let date = new Date();
     const historyObj = {
         "email": user.email,
@@ -95,9 +95,9 @@ function historyUpdate() {
         "validity": validity,
         "rechargeDate": date
     }
-    UserService.history(historyObj).then(res=>{
+    UserService.history(historyObj).then(result => {
         alert("History created");
-    }).catch(err=>{
+    }).catch(err => {
         alert("Failed to create History");
     })
 }
