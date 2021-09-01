@@ -41,15 +41,11 @@ function reduceMoney() {
     let userStr = localStorage.getItem("LOGGED_IN_USER");
     let user = userStr != null ? JSON.parse(userStr) : null;
     console.log(user);
-    // const amount = document.querySelector("#paymentType").value;
+     const amount = document.querySelector("#paymentType").value;
     const queryString = window.location.search;
     console.log(queryString);
     const urlParams = new URLSearchParams(queryString);
     const price = urlParams.get('price');
-    let _price = "";
-    for (let i = 3; i < price.length; i++) {
-        _price += price[i];
-    }
     UserService.userDetails(user._id).then(res => {
         console.log(res.data);
         const data = res.data
@@ -57,7 +53,7 @@ function reduceMoney() {
             'name': data.name,
             'email': data.email,
             'password': data.password,
-            'balance': parseInt(data.balance) - parseInt(_price),
+            'balance': parseInt(data.balance) - parseInt(price.substring(3,6)),
             'role': user.role
         }
         console.log(balance)
