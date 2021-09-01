@@ -61,9 +61,9 @@ function reduceMoney() {
             'role': user.role
         }
         console.log(balance)
-        UserService.data(balance, data._id, data._rev).then(res => {
-            console.log("updated Status : ", res.data);
-            console.log(res.data)
+        UserService.data(balance, data._id, data._rev).then(response => {
+            console.log("updated Status : ", response.data);
+            console.log(response.data)
             alert("Amount debited successfully");
             historyUpdate();
         }).catch(err => {
