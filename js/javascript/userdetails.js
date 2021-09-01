@@ -12,10 +12,10 @@ function addMoney() {
     const money = document.querySelector("#addmoney").value
 
 
-    UserService.userDetails(user._id).then(res => {
-        console.log(res.data)
-        const data = res.data
-        updatedData = {
+    UserService.userDetails(user._id).then(result1 => {
+        console.log(result1.data)
+        const data = result1.data
+       let updatedData = {
             'name': data.name,
             'email': data.email,
             'password': data.password,
