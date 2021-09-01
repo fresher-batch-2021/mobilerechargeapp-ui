@@ -19,8 +19,12 @@ function register() {
         console.log(registerObj);
         UserService.register(registerObj).then(res => {
             console.log(res.data);
-            alert("Successfully registered");
-             window.location.href = "login.html";
+            Swal.fire('successfully registered');
+            
+            myFunction();
+
+            
+
         }
         ).catch(err => {
 
@@ -32,4 +36,10 @@ function register() {
         alert("unable to register");
     }
 
+
 }
+
+
+function myFunction() {
+    setTimeout(function(){ window.location.href = "login.html"; }, 3000);
+  }

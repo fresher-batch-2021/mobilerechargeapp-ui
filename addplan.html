@@ -40,9 +40,9 @@
     </header>  
     <div class="add-table">
         <form onsubmit="addPlan()">
-            <table>
+            <table aria-describedby="mydesc">
                 <tr>
-                    <th>
+                    <th scope="col">
                         <label>Provider</label>
                     </th>
                     <td>
@@ -51,7 +51,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>
+                    <th scope="col">
                         <label>Price</label>
                     </th>
                     <td>
@@ -59,7 +59,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>
+                    <th scope="col">
                         <label>Validity</label>
                     </th>
                     <td>
@@ -67,7 +67,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>
+                    <th scope="col">
                         <label>Description</label>
                     </th>
                     <td>

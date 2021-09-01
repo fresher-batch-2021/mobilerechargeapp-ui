@@ -17,11 +17,11 @@ function login() {
                 if(data.docs[0].role == "user"){
                 
                     alert("login successful");
-                window.location.href = "listplan.html";
+                window.location.href="listplan.html";
                     
                 }else if(data.docs[0].role == "admin"){
                     alert("login successful");
-                    window.location.href = "planlist.html";
+                    window.location.href="planlist.html";
                 }
 
             } 
