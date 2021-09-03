@@ -8,6 +8,7 @@ function register() {
     try {
         Validator.isValidString(name, "name cannot be empty");
         Validator.isValidPassword(password, "password must be atleast 8 digits");
+        Validator.isValidMobilenumber(mobilenumber,"incorrect format");
         const data = {
             "selector": {
                 "$or": [
