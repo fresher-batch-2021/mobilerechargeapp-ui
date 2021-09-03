@@ -21,7 +21,7 @@ function login() {
                     
                 }else if(data.docs[0].role == "admin"){
                     alert("login successful");
-                    window.location.href="planlist.html";
+                    window.location.href="displaypage.html";
                 }
 
             } 

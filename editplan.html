@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <style>
+            .editplan{
+                border: 3px solid black;
+                width: 300px;
+                height: 300px;
+                margin:auto ;
+                margin-top: 200px;
+
+            }
+            #btn{
+                margin-left: 100px;
+            }
+        </style>
+</head>
+
+<body>
+    <div class="editplan">
+        <h1>Edit Plan</h1>
+        <label>Provider</label>
+        <input type="text" id="provider" readonly>
+        <br>
+        <br>
+        <label>Price</label>
+        <input type="number" id="price">
+        <br>
+        <br>
+        <label>Validity</label>
+        <input type="text" id="validity" readonly>
+        <br>
+        <br>
+        <label>Description</label>
+        <input type="text" id="description" readonly>
+        <br>
+        <br>
+        <div id="btn"></div>
+    </div>
+</body>
+<script>
+    const queryString = window.location.search;
+    console.log(queryString);
+    const urlParams = new URLSearchParams(queryString);
+    const id = urlParams.get('id');
+    const rev = urlParams.get('rev');
+    console.log(id);
+    console.log(rev);
+
+    const dbUserName = "apikey-v2-kf8ex4frj52lu2wwin72qqktpi3occ9bfv4p80vbr99";
+    const dbPassword = "68fc5b9dc8c58071087abaecc44a5f29";
+    const basicAuth = 'Basic ' + btoa(dbUserName + ':' + dbPassword);
+    let url = "https://2fbcb9ec-d57d-431a-8d72-186d88ddf478-bluemix.cloudantnosqldb.appdomain.cloud/planlist/" + id;
+    axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
+        console.log(res.data);
+        const detail = res.data;
+        document.querySelector("#provider").value = detail.provider;
+        document.querySelector("#price").value = detail.price;
+        document.querySelector("#validity").value = detail.validity;
+        document.querySelector("#description").value = detail.description;
+        let content = `<button onclick="editPlan('${id}','${rev}')">Update</button>`
+        document.querySelector("#btn").innerHTML = content;
+    }).catch((err) => console.log((err)));
+
+
+
+    function editPlan(id, rev) {
+        console.log(id);
+        console.log(rev);
+        alert("Funtion WOrks");
+        event.preventDefault();
+        const queryString = window.location.search;
+        console.log(queryString);
+        let providerValue = document.querySelector("#provider").value;
+        let priceValue = document.querySelector("#price").value;
+        let validityValue = document.querySelector("#validity").value;
+        let descriptionValue = document.querySelector("#description").value;
+
+        let editObj = {
+            provider: providerValue,
+            price: 'Rs.'+priceValue,
+            validity: validityValue,
+            description: descriptionValue
+        }
+        console.log("Value :", editObj);
+        alert("Success");
+        axios.put(url + "?rev=" + rev, editObj, { headers: { 'Authorization': basicAuth } }).then((res) => {
+            console.log(res.data);
+            alert("Update Success");
+            window.location.href = "displaypage.html";
+        }).catch((err) => alert("error"));
+    }
+</script>
+
+</html>

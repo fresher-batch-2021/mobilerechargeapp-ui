@@ -7,7 +7,9 @@ const routes=[
     {path:'history.html',roles:['user']},
     {path:'planlist.html',roles:['admin']},
     {path:'addplan.html',roles:['admin']},
-    {path:'listusers.html',roles:['admin']}
+    {path:'listusers.html',roles:['admin']},
+    {path:'displaypage.html',roles:['admin']},
+    {path:'editplan.html',roles:['admin']}
 
 ];
 
