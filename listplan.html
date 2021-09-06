@@ -18,9 +18,9 @@
             <thead>
                 <tr>
                     <th scope="col">Provider</th>
-                    <th scope="col">price</th>
-                    <th scope="col">validity</th>
-                    <th scope="col">DESCRIPTION</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Validity</th>
+                    <th scope="col">Description</th>
                     <th scope="col">Recharge</th>
                 </tr>
             </thead>
@@ -50,6 +50,7 @@
         function displayTable(tableData) {
             let content = "";
             for (let taskObj of tableData) {
+                console.log(taskObj)
                 content = content + `<tr><td>${taskObj.doc.provider}</td><td>${taskObj.doc.price}</td>
                     <td>${taskObj.doc.validity}</td><td>${taskObj.doc.description}</td><td><a href="prepaid.html?provider=${taskObj.doc.provider}&price=${taskObj.doc.price}&validity=${taskObj.doc.validity}">recharge</a></td></tr>`;
                 document.querySelector("#content").innerHTML = content;

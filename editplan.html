@@ -62,6 +62,7 @@
     axios.get(url, { headers: { 'Authorization': basicAuth } }).then(res => {
         console.log(res.data);
         const detail = res.data;
+
         document.querySelector("#provider").value = detail.provider;
         document.querySelector("#price").value = detail.price;
         document.querySelector("#validity").value = detail.validity;
@@ -77,6 +78,8 @@
         console.log(rev);
         alert("Funtion WOrks");
         event.preventDefault();
+        const urlParams = new URLSearchParams(queryString);
+
         const queryString = window.location.search;
         console.log(queryString);
         let providerValue = document.querySelector("#provider").value;

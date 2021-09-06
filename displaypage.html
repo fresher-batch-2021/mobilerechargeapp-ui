@@ -17,7 +17,7 @@
     <header id="admin-header">
     </header> 
     <div class="plan">
-        <input type="text " id="myInput" class="myInput" placeholder="search by operator.." onkeyup="searchFun()"
+        <input type="text " id="myInput" class="myInput" placeholder="search by provider.." onkeyup="searchFun()"
             autocomplete="off">
     </div> 
     <div class="planlist">
@@ -58,13 +58,17 @@
         function displayTable(tableData) {
             let content = "";
             for (let taskObj of tableData) {
+                const validity=taskObj.doc.validity.substr(0,2)
+                const validityDate=parseInt(validity)
+                console.log(validityDate)
+
                 content = content +
                     `<tr>
                     <td>${taskObj.doc.provider}</td>
                     <td>${taskObj.doc.price}</td>
-                    <td>${taskObj.doc.validity}</td>
+                    <td>${taskObj.doc.validity} Days</td>
                     <td>${taskObj.doc.description}</td>
-                    <td><a href="editplan.html?id=${taskObj.doc._id}&rev=${taskObj.doc._rev}&provider=${taskObj.doc.provider}&price=${taskObj.doc.price}&validity=${taskObj.doc.validity}&description=${taskObj.doc.description}">Edit</a></td>
+                    <td><a href="editplan.html?id=${taskObj.doc._id}&rev=${taskObj.doc._rev}&provider=${taskObj.doc.provider}&price=${taskObj.doc.price}&validity=${validityDate}&description=${taskObj.doc.description}">Edit</a></td>
                     <td><button type='button' onclick="deleteFun('${taskObj.doc._id}','${taskObj.doc._rev}')">Delete</button></td>
                     </tr>`;
                 document.querySelector("#content").innerHTML = content;

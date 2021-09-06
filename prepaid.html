@@ -18,7 +18,7 @@
             <form onsubmit="amount()">
                 <label for="mobilenumber">Mobilenumber</label>
                 <br>
-                <input class="box-prepaid" type="number" name="mobilenumber" id="mobilenumber"
+                <input class="box-prepaid" type="text" pattern="[6789][0-9]{9}" name="mobilenumber" id="mobilenumber"
                     placefolder="mobilenumber" required>
                 <br>
                 <label for="simNames">Provider</label>
@@ -38,6 +38,8 @@
         const urlParams = new URLSearchParams(queryString);
         const simName = urlParams.get('provider');
         const price = urlParams.get('price');
+        const validity = urlParams.get('validity');
+
         console.log(simName, price);
         document.querySelector("#simNames").innerHTML = `<input type="text" value = ${simName} name="provider" id="provider">`;
         document.querySelector("#planPrice").innerHTML = `<input type="text" value = ${price} name="price" id="price">`;
@@ -48,7 +50,8 @@
             const urlParams = new URLSearchParams(queryString);
             const simName = urlParams.get('provider');
             const price = urlParams.get('price');
-            const validity = urlParams.get('validity');
+            const validity = urlParams.get('validity').substr(0,2);
+            console.log(validity)
             const mobileNumber= document.querySelector("#mobilenumber").value;
             console.log(mobileNumber)
              window.location.href = "payment.html?price=" + price+"&provider="+simName+"&mobilenumber="+mobileNumber+"&validity="+validity;

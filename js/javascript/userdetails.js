@@ -10,7 +10,8 @@ function addMoney() {
     let user = userStr != null ? JSON.parse(userStr) : null;
     console.log(user)
     const money = document.querySelector("#addmoney").value;
-    if (money == null || money.trim() == "") {
+    console.log(money);
+    if (money == null || money.trim() == ""|| parseInt(money) <= 0) {
         alert("Please Enter valid Amount")
     }
     else {
@@ -53,25 +54,30 @@ function reduceMoney() {
     UserService.userDetails(user._id).then(res => {
         console.log(res.data);
         const data = res.data
-        let balance = {
-            'name': data.name,
-            'email': data.email,
-            'password': data.password,
-            'mobilenumber':data.mobilenumber,
-            'balance': parseInt(data.balance) - parseInt(price.substring(3, 6)),
-            'role': user.role
+        if(data.balance <= 0){
+            alert("your wallet is empty")
         }
-        console.log(balance)
-        UserService.data(balance, data._id, data._rev).then(response => {
-            console.log("updated Status : ", response.data);
-            console.log(response.data)
-            alert("Amount debited successfully");
-            historyUpdate();
-        }).catch(err => {
-            alert("Faild To load Money")
-        })
+        else{
+            let balance = {
+                'name': data.name,
+                'email': data.email,
+                'password': data.password,
+                'mobilenumber':data.mobilenumber,
+                'balance': parseInt(data.balance) - parseInt(price.substring(3, 6)),
+                'role': user.role
+            }
+            console.log(balance)
+            UserService.data(balance, data._id, data._rev).then(response => {
+                console.log("updated Status : ", response.data);
+                console.log(response.data)
+                alert("Amount debited successfully");
+                historyUpdate();
+            }).catch(err => {
+                alert("Faild To load Money")
+            })
+        }
     }).catch(err => console.error(err.message))
-
+    
 
 
 }
@@ -86,7 +92,11 @@ function historyUpdate() {
     const price = urlParams.get('price');
     const validity = urlParams.get('validity');
     const number = urlParams.get('mobilenumber');
-
+console.log(validity)
+const validate=parseInt(validity)
+const expiryDate=dayjs().add(validate,'days')
+console.log(expiryDate)
+console.log(validate)
     let date = new Date();
     const historyObj = {
         "email": user.email,
@@ -94,10 +104,12 @@ function historyUpdate() {
         "price": price,
         "phoneNumber": number,
         "validity": validity,
+        "expiryDate":expiryDate,
         "rechargeDate": date
     }
     UserService.history(historyObj).then(result => {
         alert("History created");
+        window.location.href="wallet.html";
     }).catch(err => {
         alert("Failed to create History");
     })

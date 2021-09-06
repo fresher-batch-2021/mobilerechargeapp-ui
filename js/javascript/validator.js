@@ -10,9 +10,4 @@ class Validator {
             throw new Error(message);
         }
     }
-    static isValidMobilenumber(input,message){
-        if(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})*$/.test(input)){
-            throw new Error(message)
-        }
-    }
 }
