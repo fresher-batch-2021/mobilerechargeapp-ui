@@ -7,6 +7,7 @@ UserService.listHistory().then(res=>{
     let i=1;
 
     for(let history of data){
+        $("#historyDetails tbody").empty();
     const rechargeDate=history.doc.rechargeDate.substr(0,10)
     console.log(rechargeDate)
     const expiryDate=history.doc.expiryDate.substr(0,10)
@@ -26,7 +27,7 @@ UserService.listHistory().then(res=>{
             `;
         }
     }
-    document.querySelector("#historyDetails").innerHTML = content;
+    $("#historyDetails tbody").append(content);
 }).catch(err=>{
     alert("failed");
 })

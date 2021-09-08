@@ -21,7 +21,7 @@
             autocomplete="off">
     </div> 
     <div class="planlist">
-        <table aria-describedby="mydesc">
+        <table aria-describedby="mydesc"  id="planDetails">
             <thead>
                 <tr>
                     <th scope="col">Provider</th>
@@ -32,7 +32,7 @@
                     <th scope="col">ACTION</th>
                 </tr>
             </thead>
-            <tbody id="content"></tbody>
+            <tbody></tbody>
         </table>
     </div>
 
@@ -58,6 +58,7 @@
         function displayTable(tableData) {
             let content = "";
             for (let taskObj of tableData) {
+                $("#planDetails tbody").empty();
                 const validity=taskObj.doc.validity.substr(0,2)
                 const validityDate=parseInt(validity)
                 console.log(validityDate)
@@ -71,12 +72,12 @@
                     <td><a href="editplan.html?id=${taskObj.doc._id}&rev=${taskObj.doc._rev}&provider=${taskObj.doc.provider}&price=${taskObj.doc.price}&validity=${validityDate}&description=${taskObj.doc.description}">Edit</a></td>
                     <td><button type='button' onclick="deleteFun('${taskObj.doc._id}','${taskObj.doc._rev}')">Delete</button></td>
                     </tr>`;
-                document.querySelector("#content").innerHTML = content;
+                $("#planDetails tbody").append(content);
             }
         }
         function searchFun() {
             let searchInput = document.getElementById("myInput").value.toUpperCase();
-            let myTable = document.getElementById("content");
+            let myTable = document.getElementById("planDetails");
             let tableRow = myTable.getElementsByTagName("tr");
             for (var i = 0; i < tableRow.length; i++) {
                 let tableDatas = tableRow[i].getElementsByTagName("td")[0];

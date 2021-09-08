@@ -14,7 +14,8 @@
 
     <div class="login">
         <h1 class="heading">Login</h1>
-        <form onsubmit="login()">
+        <form id="loginForm" method="post">
+        <!-- <form onsubmit="login()"> -->
             <label for="email"> Email</label><br>
             <input type="email" name="email" id="email" placeholder="enter the email" required>
             <br>
@@ -29,6 +30,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="js/javascript/login.js"></script>
+    <script src="js/jquery.min.js"></script>
 
 </body>
 

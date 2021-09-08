@@ -1,7 +1,13 @@
+$(document).ready (function(){
+  console.log("jquery Loaded");
+  $("#loginForm").submit(login)
+
+
+})
 function login() {
     event.preventDefault();
-    const email = document.querySelector("#email").value;
-    const password = document.querySelector("#password").value;
+    const email = $("#email").val();
+    const password = $("#password").val();
     if (password.length < 8) {
         alert("password must be greater than 8 digits");
         return false;

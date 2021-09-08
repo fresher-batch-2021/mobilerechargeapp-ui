@@ -9,7 +9,7 @@ function addMoney() {
     let userStr = localStorage.getItem("LOGGED_IN_USER");
     let user = userStr != null ? JSON.parse(userStr) : null;
     console.log(user)
-    const money = document.querySelector("#addmoney").value;
+    const money = $("#addmoney").val();
     console.log(money);
     if (money == null || money.trim() == ""|| parseInt(money) <= 0) {
         alert("Please Enter valid Amount")
@@ -46,7 +46,7 @@ function reduceMoney() {
     let userStr = localStorage.getItem("LOGGED_IN_USER");
     let user = userStr != null ? JSON.parse(userStr) : null;
     console.log(user);
-    const amount = document.querySelector("#paymentType").value;
+    const amount = $("#paymentType").val();
     const queryString = window.location.search;
     console.log(queryString);
     const urlParams = new URLSearchParams(queryString);
@@ -122,7 +122,7 @@ function walletBalance() {
     UserService.userDetails(user._id).then(res => {
         console.log(res.data);
         let content = `<h1>` + "Balance  : " + `${res.data.balance}</h1>`;
-        document.querySelector("#userName").innerHTML = content;
+        $("#userName").html(content);
     }).catch(err => console.error(err.message))
 }
 walletBalance();

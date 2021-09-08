@@ -35,7 +35,8 @@
     <header id="admin-header">
     </header>
     <div class="add-table">
-        <form onsubmit="addPlan()">
+    
+ <form onsubmit="addPlan()">
             <table aria-describedby="mydesc">
                 <tr>
                     <th scope="col">
@@ -85,6 +86,7 @@
 
     </div>
     <script>
+
         function addPlan() {
             event.preventDefault();
             const network = document.getElementById("provider").value;

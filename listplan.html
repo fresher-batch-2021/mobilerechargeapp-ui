@@ -14,7 +14,7 @@
     <header id="header">
     </header>  
     <div class="planlist">
-        <table aria-describedby="mydesc">
+        <table aria-describedby="mydesc" id="content">
             <thead>
                 <tr>
                     <th scope="col">Provider</th>
@@ -24,7 +24,7 @@
                     <th scope="col">Recharge</th>
                 </tr>
             </thead>
-            <tbody id="content"></tbody>
+            <tbody></tbody>
         </table>
     </div>
 
@@ -50,10 +50,11 @@
         function displayTable(tableData) {
             let content = "";
             for (let taskObj of tableData) {
+                $("#content tbody").empty();
                 console.log(taskObj)
                 content = content + `<tr><td>${taskObj.doc.provider}</td><td>${taskObj.doc.price}</td>
                     <td>${taskObj.doc.validity}</td><td>${taskObj.doc.description}</td><td><a href="prepaid.html?provider=${taskObj.doc.provider}&price=${taskObj.doc.price}&validity=${taskObj.doc.validity}">recharge</a></td></tr>`;
-                document.querySelector("#content").innerHTML = content;
+                $("#content tbody").append(content);
             }
         }
     </script>
