@@ -3,7 +3,7 @@ $(document).ready (function(){
   $("#loginForm").submit(login)
 
 
-})
+ })
 function login() {
     event.preventDefault();
     const email = $("#email").val();

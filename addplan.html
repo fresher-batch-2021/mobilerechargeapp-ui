@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>addplan</title>
+    
     <style>
         body {
             background-color: snow;
@@ -34,9 +32,10 @@
 <body>
     <header id="admin-header">
     </header>
-    <div class="add-table">
     
- <form onsubmit="addPlan()">
+    <div class="add-table">
+
+        <form onsubmit="addPlan()">
             <table aria-describedby="mydesc">
                 <tr>
                     <th scope="col">
@@ -80,47 +79,21 @@
                 </tr>
             </table>
 
-            <button type="submit" class="addplan-button">Submit</button>
+            <button class="addplan-button">Submit</button>
 
         </form>
 
-    </div>
-    <script>
-
-        function addPlan() {
-            event.preventDefault();
-            const network = document.getElementById("provider").value;
-            const price = document.getElementById("price").value;
-            const validity = document.getElementById("validity").value;
-            const description = document.getElementById("description").value;
-            let planObj = {
-                "provider": network,
-                "price": 'Rs.' + price,
-                "validity": validity,
-                "description": description
-            }
-
-            const dbUserName = "apikey-v2-kf8ex4frj52lu2wwin72qqktpi3occ9bfv4p80vbr99";
-            const dbPassword = "68fc5b9dc8c58071087abaecc44a5f29";
-            const basicAuth = 'Basic ' + btoa(dbUserName + ':' + dbPassword);
-
-            let url = "https://2fbcb9ec-d57d-431a-8d72-186d88ddf478-bluemix.cloudantnosqldb.appdomain.cloud/planlist";
-            axios.post(url, planObj, { headers: { 'Authorization': basicAuth } }).then(res => {
-                letdata = res.data;
-                console.log(planObj);
-                alert("Plan Successfully Added");
-            }).catch(err => {
-                console.error(err.message);
-                alert("Unable to Add Plan.. ");
-            });
-
-        }
-    </script>
+    </div>     
+  
+    <script src="js/service.js"></script>
+    <script src="js/javascript/addplan.js"></script>
     <script src="js/jquery.min.js"></script>
     <script>
-        $("#admin-header").load("adminheader.html");
-
-    </script>
+        $("#admin-header").load("adminheader.html");</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
 </body>
 
 </html>
