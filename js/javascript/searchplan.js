@@ -1,7 +1,7 @@
 UserService.searchPlan().then(res => {
     let data = res.data;
-    tableData = data.rows;
-    displayTable(tableData);
+    let searchData = data.rows;
+    displayTable(searchData);
     console.log("Success");
 }).catch(err => {
     let errorMessage = err.response.data.errorMessage;
@@ -10,22 +10,22 @@ UserService.searchPlan().then(res => {
     alert("Error-" + errorMessage);
 });
 
-function displayTable(tableData) {
+function displayTable(searchData) {
     let content = "";
-    for (let taskObj of tableData) {
+    for (let searchObj of searchData) {
         $("#planDetails tbody").empty();
-        const validity=taskObj.doc.validity.substr(0,2)
+        const validity=searchObj.doc.validity.substr(0,2)
         const validityDate=parseInt(validity)
         console.log(validityDate)
 
         content = content +
             `<tr>
-            <td>${taskObj.doc.provider}</td>
-            <td>${taskObj.doc.price}</td>
-            <td>${taskObj.doc.validity} Days</td>
-            <td>${taskObj.doc.description}</td>
-            <td><a href="editplan.html?id=${taskObj.doc._id}&rev=${taskObj.doc._rev}&provider=${taskObj.doc.provider}&price=${taskObj.doc.price}&validity=${validityDate}&description=${taskObj.doc.description}">Edit</a></td>
-            <td><button type='button' onclick="deleteFun('${taskObj.doc._id}','${taskObj.doc._rev}')">Delete</button></td>
+            <td>${searchObj.doc.provider}</td>
+            <td>${searchObj.doc.price}</td>
+            <td>${searchObj.doc.validity} Days</td>
+            <td>${searchObj.doc.description}</td>
+            <td><a href="editplan.html?id=${searchObj.doc._id}&rev=${searchObj.doc._rev}&provider=${searchObj.doc.provider}&price=${searchObj.doc.price}&validity=${validityDate}&description=${searchObj.doc.description}">Edit</a></td>
+            <td><button type='button' onclick="deleteFun('${searchObj.doc._id}','${searchObj.doc._rev}')">Delete</button></td>
             </tr>`;
         $("#planDetails tbody").append(content);
     }

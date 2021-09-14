@@ -9,39 +9,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <style>
-            tr:nth-child(odd) {
-        background-color: #F2F2F2;
-      }
-    td{ border: 1px solid #ccc;
-        text-align: center;
-        padding: 15px;
-    }
-    
-    th { border: 1px solid #ccc;
-        color: white;
-        background-color: #C0C0C0;
-        padding: 19px;
-    }
-    
-    table {
-        border: 1px  #ccc;
-        margin: 3% auto 3%;
-        border-collapse: collapse;
-        border-radius: 3px solid;
-        width:60%;
-    }
-    .admin-users{
-        margin-left: 300px;
-        margin-top: 80px;
-    }
-    
-        </style>
+    <style>
+        tr:nth-child(odd) {
+            background-color: #F2F2F2;
+        }
+
+        td {
+            border: 1px solid #ccc;
+            text-align: center;
+            padding: 15px;
+        }
+
+        th {
+            border: 1px solid #ccc;
+            color: white;
+            background-color: #C0C0C0;
+            padding: 19px;
+        }
+
+        table {
+            border: 1px #ccc;
+            margin: 3% auto 3%;
+            border-collapse: collapse;
+            border-radius: 3px solid;
+            width: 60%;
+        }
+
+        .admin-users {
+            margin-left: 300px;
+            margin-top: 80px;
+        }
+    </style>
 </head>
 
 <body>
     <header id="admin-header">
-    </header>  
+    </header>
     <div class="admin-users">
         <input type="text " id="myInput" class="myInput" placeholder="search by name.." onkeyup="searchFun()"
             autocomplete="off">
@@ -59,7 +62,7 @@
 
         </tbody>
     </table>
-       
+
 
 
     <script src="js/jquery.min.js"></script>

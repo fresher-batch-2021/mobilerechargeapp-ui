@@ -1,8 +1,8 @@
 UserService.listUsers().then(res => {
     let data = res.data;
     console.log(data)
-    tableData = data.rows;
-    displayTable(tableData);
+   let userData = data.rows;
+    displayTable(userData);
     console.log("Success");
     }).catch(err => {
     let errorMessage = err.response.data.errorMessage;
@@ -11,15 +11,15 @@ UserService.listUsers().then(res => {
     alert("Error-" + errorMessage);
     });
 
-    function displayTable(tableData) {
+    function displayTable(userData) {
     let content = "";
-    for (let taskObj of tableData) {
+    for (let userObj of userData) {
         $("#content tbody").empty();
     content = content + `<tr>
-        <td>${taskObj.doc.name}</td>
-        <td>${taskObj.doc.mobilenumber}</td>
-        <td>${taskObj.doc.email}</td>
-        <td><button type='button' onclick="deleteFun('${taskObj.doc._id}','${taskObj.doc._rev}')">Delete</button>
+        <td>${userObj.doc.name}</td>
+        <td>${userObj.doc.mobilenumber}</td>
+        <td>${userObj.doc.email}</td>
+        <td><button type='button' onclick="deleteFun('${userObj.doc._id}','${userObj.doc._rev}')">Delete</button>
         </td>
     </tr>`;
     $("#content tbody").append(content);

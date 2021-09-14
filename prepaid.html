@@ -50,11 +50,11 @@
             const urlParams = new URLSearchParams(queryString);
             const simName = urlParams.get('provider');
             const price = urlParams.get('price');
-            const validity = urlParams.get('validity').substr(0,2);
+            const validity = urlParams.get('validity').substr(0, 2);
             console.log(validity)
-            const mobileNumber= document.querySelector("#mobilenumber").value;
+            const mobileNumber = document.querySelector("#mobilenumber").value;
             console.log(mobileNumber)
-             window.location.href = "payment.html?price=" + price+"&provider="+simName+"&mobilenumber="+mobileNumber+"&validity="+validity;
+            window.location.href = "payment.html?price=" + price + "&provider=" + simName + "&mobilenumber=" + mobileNumber + "&validity=" + validity;
         }
     </script>
     <script src="js/jquery.min.js"></script>

@@ -1,9 +1,9 @@
-$(document).ready (function(){
-  console.log("jquery Loaded");
-  $("#loginForm").submit(login)
+// $(document).ready (function(){
+//   console.log("jquery Loaded");
+//   $("#loginForm").submit(login)
 
 
- })
+//  })
 function login() {
     event.preventDefault();
     const email = $("#email").val();

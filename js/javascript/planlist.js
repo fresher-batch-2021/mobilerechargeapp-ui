@@ -1,8 +1,8 @@
 UserService.listPlan().then(res => {
     let data = res.data;
     console.log(data)
-    tableData = data.rows;
-    displayTable(tableData);
+    let planData = data.rows;
+    displayTable(planData);
     console.log("Success");
 }).catch(err => {
     let errorMessage = err.response.data.errorMessage;
@@ -11,13 +11,13 @@ UserService.listPlan().then(res => {
     alert("Error-" + errorMessage);
 });
 
-function displayTable(tableData) {
+function displayTable(planData) {
     let content = "";
-    for (let taskObj of tableData) {
+    for (let listObj of planData) {
         $("#content tbody").empty();
-        console.log(taskObj)
-        content = content + `<tr><td>${taskObj.doc.provider}</td><td>${taskObj.doc.price}</td>
-            <td>${taskObj.doc.validity}</td><td>${taskObj.doc.description}</td><td><a href="prepaid.html?provider=${taskObj.doc.provider}&price=${taskObj.doc.price}&validity=${taskObj.doc.validity}">recharge</a></td></tr>`;
+        console.log(listObj)
+        content = content + `<tr><td>${listObj.doc.provider}</td><td>${listObj.doc.price}</td>
+            <td>${listObj.doc.validity}</td><td>${listObj.doc.description}</td><td><a href="prepaid.html?provider=${listObj.doc.provider}&price=${listObj.doc.price}&validity=${listObj.doc.validity}">recharge</a></td></tr>`;
         $("#content tbody").append(content);
     }
 }

@@ -1,7 +1,7 @@
- $(document).ready(function(){
-    console.log("jquery Loaded");
-    $("#regForm").submit(register);
- })
+//  $(document).ready(function(){
+    // console.log("jquery Loaded");
+    // $("#regForm").submit(register);
+//  })
 function register() {
     event.preventDefault()
     const name = $("#name").val();
