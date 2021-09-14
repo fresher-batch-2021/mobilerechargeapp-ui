@@ -5,7 +5,7 @@
     <ul class='header-ul'>
         <li class="nav-item logout-button" data-loggedin="true">
 
-            <a onclick="logout()">Logout</a>
+            <a class='nav-link' href="logout.html">Logout</a>
 
         </li>
 
@@ -59,10 +59,10 @@
             $(".nav-item[data-loggedin='false']").show();
             $(".nav-item[data-loggedin='true']").hide();
         }
-        function logout() {
-            localStorage.clear("user");
-            window.location.href = 'login.html'
-        }
+        // function logout() {
+        //     localStorage.clear("user");
+        //     window.location.href = 'login.html'
+        // }
 
     </script>
 </header>

@@ -7,10 +7,19 @@
     <title>logout</title>
 </head>
 <body>
+    <header id="header">
+    </header>
+
     <script>
-        localStorage.clear();
+        localStorage.clear("user");
         document.location.reload();
         window.location.href = "login.html";
     </script>
+     <script src="js/jquery.min.js"></script>
+     <script>
+ 
+         $("#header").load("_header.html");
+ 
+     </script>
 </body>
 </html>
