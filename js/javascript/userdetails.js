@@ -122,7 +122,7 @@ function walletBalance() {
     UserService.userDetails(user._id).then(res => {
         console.log(res.data);
         let content = `<h1>` + "Balance  : " + `${res.data.balance}</h1>`;
-        $("#userName").html(content);
+        $("#userBalance").html(content);
     }).catch(err => console.error(err.message))
 }
 walletBalance();

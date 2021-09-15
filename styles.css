@@ -4,7 +4,8 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: rgb(122,202,229);
+    ;
   }
   
   li {
@@ -341,3 +342,49 @@ margin-left: 250px;
 body {
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
   }
+
+  /* *************Index Logo*************** */
+
+  .responsive{
+      width: 100%;
+      max-width: 20%;
+      height: auto;
+      font-size: 100%;
+  }
+
+  input[type=number]{
+    width: 50%;
+    padding: 15px;
+    margin: 15px;
+    margin-left: 87px;
+    border: 1px solid #f2f2f2;
+    box-sizing: border-box;
+    background-color: #f2f2f2;  
+  }
+
+  .addmoneybutton{
+    background-color:rgb(122,202,229); 
+    color: white;
+      border-radius: 25px;
+      border: none;
+      padding: 15px 30px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      margin-left: 130px;
+      margin-top: 10px;
+  }
+
+  .container{
+    margin-right: 550px;
+    margin-left: 550px;
+    margin-top: 175px;
+    background-color: white;
+    padding: 27px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .container h1,h5{
+      text-align: center;
+  }
+
