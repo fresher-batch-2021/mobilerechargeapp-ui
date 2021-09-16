@@ -1,0 +1,49 @@
+input[type=email], input[type=password]{
+  width: 100%;
+  padding: 15px;
+  margin: 15px 0px;
+  border: 1px solid #f2f2f2;
+  box-sizing: border-box;
+  background-color: #f2f2f2;  
+}
+
+.loginpage-button{
+  background-color: rgb(122,202,229);
+  color: white;
+    border-radius: 25px;
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 120px;
+    margin-top: 10px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+.new-user{
+  text-align: center;
+  padding-right: 10px;
+  padding-top: 20px;
+}
+
+.new-user a{
+  color: red;
+}
+
+.container-login{
+  margin-right: 550px;
+  margin-left: 550px;
+  margin-top: 65px;
+  background-color: white;
+  padding: 27px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container-login h2{
+  text-align: center;
+}

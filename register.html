@@ -13,11 +13,11 @@
 </head>
 
 <body>
-    <div class="register-content">
+    <!-- <div class="register-content">
         <div class="register">
             <h1 class="register-head">Register</h1>
              <!-- <form id="regForm" method="post"> -->
-            <form onsubmit="register()"> 
+            <!-- <form onsubmit="register()"> 
                 <label class="register-name" for="name">Name </label><br>
                 <input class="box-style" type="text" name="name" pattern="[a-zA-Z]{3,30}" id="name"
                     placeholder="Enter the name" autofocus required> <br>
@@ -34,8 +34,54 @@
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"><br>
                 <button class="example">submit</button>
         </div>
+    </div> -->
+    <!-- </form> --> 
+    <img src="images/RechargeLogo.png" class="responsive">
+    <header id="header">
+    </header>
+    <div class="background-image">
+
+        <form class="registerForm" onsubmit="register()">
+
+            <div class="form-container">
+
+                <h2>Register</h2>
+
+                <div class="name">
+
+                    <input class="box-style" type="text" name="name" pattern="[a-zA-Z]{3,30}" id="name"
+                    placeholder="Enter the name" autofocus required> 
+
+                </div>
+
+                <div class="mobilenumber">
+
+                    <input class="box-style" type="text" name="mobilenumber" pattern="[6789][0-9]{9}" id="mobilenumber"
+                    placeholder="mobilenumber" required>
+
+                </div>
+
+                <div class="email">
+
+                    <input class="box-style" type="email" name="email" id="email" placeholder="enter the email" required
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+
+                </div>
+
+                <div class="password">
+
+                    <input class="box-style" type="password" name="password" id="password" placeholder="enter the password"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+
+                </div>
+
+                <button class="register-button" type="Submit" id="submit" value="Submit">Submit</button>
+                <button class="register-buttons" type="reset" id="reset" value="Reset">Reset</button>
+            </div>
+
+        </form>
+
     </div>
-    </form>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
@@ -45,6 +91,13 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/service.js"></script>
     <script src="js/javascript/validator.js"></script>
+    <script src="js/jquery.min.js"></script>
+
+    <script>
+        $("#header").load("_header.html");
+
+    </script>
+    
 </body>
 
 </html>

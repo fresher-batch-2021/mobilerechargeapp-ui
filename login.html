@@ -6,24 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>login</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login.css">
 
 </head>
 
 <body>
+    <img src="images/RechargeLogo.png" class="responsive">
+    <header id="header">
+    </header>
 
-    <div class="login">
+    <!-- <div class="login">
         <h1 class="heading">Login</h1>
          <!-- <form id="loginForm" method="post">  -->
-        <form onsubmit="login()"> 
+        <!-- <form onsubmit="login()"> 
             <label for="email"> Email</label><br>
             <input type="email" name="email" id="email" placeholder="enter the email" required>
             <br>
             <label for="password">Password</label><br>
             <input type="password" name="password" id="password" placeholder="enter the password"><br>
             <button id="index1">submit</button>
-        </form>
-    </div>
+        <!-- </form> -->
+    <!-- <!-- </div> -->
+
+
+    <form onsubmit="login()">
+
+        <div class="container-login">
+
+            <h2>Login</h2>
+
+            <hr>
+
+            <div class="email">
+
+                <input type="email" name="email" id="mail" placeholder="Enter Email " required autocomplete="off"
+                    autofocus> <br>
+            </div>
+
+            <div class="password">
+
+                <input type="password" name="password" id="pass" placeholder="Enter Password " required
+                    autocomplete="off" autofocus> <br>
+
+            </div>
+
+            <button class="loginpage-button" type="submit" id="submit">Submit</button>
+
+            <div class="new-user">
+
+                <h4>New User ? <a href="register.html">Click Here</a></h4>
+
+            </div>
+
+        </div>
+
+    </form>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
@@ -32,6 +69,12 @@
     <script src="js/javascript/login.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/service.js"></script>
+    <script src="js/jquery.min.js"></script>
+
+    <script>
+        $("#header").load("_header.html");
+
+    </script>
 
 </body>
 

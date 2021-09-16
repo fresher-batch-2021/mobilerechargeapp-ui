@@ -7,7 +7,7 @@
 function login() {
     event.preventDefault();
     const email = $("#email").val();
-    const password = $("#password").val();
+    const password = $("#pass").val();
     if (password.length < 8) {
         alert("password must be greater than 8 digits");
         return false;

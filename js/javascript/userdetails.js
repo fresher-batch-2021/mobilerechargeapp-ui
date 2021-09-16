@@ -94,9 +94,10 @@ function historyUpdate() {
     const number = urlParams.get('mobilenumber');
 console.log(validity)
 const validate=parseInt(validity)
+console.log(validate)
+
 const expiryDate=dayjs().add(validate,'days')
 console.log(expiryDate)
-console.log(validate)
     let date = new Date();
     const historyObj = {
         "email": user.email,
